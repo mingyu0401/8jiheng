@@ -1,0 +1,7 @@
+.work/
+tools/*.jar
+tools/jadx/
+tools/keystore/
+*.idsig
+decoded/build/
+artifacts/signed/
