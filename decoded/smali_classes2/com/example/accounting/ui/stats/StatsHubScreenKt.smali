@@ -6015,9 +6015,9 @@
     const/16 v14, 0x6180
 
     .line 278
-    const-string v7, "\u603b\u9500\u552e\u989d"
+    const-string v7, "\u5df2\u5b8c\u6210\u9500\u552e\u989d"
 
-    const-string v10, "\u603b\u6210\u672c"
+    const-string v10, "\u5df2\u5b8c\u6210\u672c\u91d1"
 
     move-object v13, v15
 

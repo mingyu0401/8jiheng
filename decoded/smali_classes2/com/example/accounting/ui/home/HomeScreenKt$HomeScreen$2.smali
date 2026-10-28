@@ -1700,7 +1700,7 @@
     .line 223
     const-string v2, "\u5356\u8d27\u5229\u6da6"
 
-    const-string v3, "\u672c\u6708\u5229\u6da6"
+    const-string v3, "\u603b\u5229\u6da6"
 
     move-wide/from16 v7, v16
 
