@@ -147,7 +147,7 @@
 
     const v25, 0x1fff6
 
-    const-string v1, "\u5feb\u901f\u586b\u5165:\u6e20\u9053-\u7269\u54c1-\u6210\u672c-\u65f6\u95f4-\u5907\u6ce8"
+    const-string v1, "\u4e00\u952e\u5bfc\u5165\uff1a\u7c98\u8d34\u6e20\u9053-\u7269\u54c1-\u6210\u672c-\u65f6\u95f4-\u5907\u6ce8"
 
     const/4 v2, 0x0
 
