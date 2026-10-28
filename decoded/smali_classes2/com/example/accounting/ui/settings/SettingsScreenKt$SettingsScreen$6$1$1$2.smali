@@ -188,9 +188,9 @@
 
     const/16 v8, 0x8
 
-    const-string v1, "\u5bfc\u5165\u8d26\u5355 CSV"
+    const-string v1, "\u5bfc\u5165\u5df2\u5bfc\u51fa\u8d26\u5355 CSV"
 
-    const-string v2, "\u9009\u62e9\u4e4b\u524d\u5bfc\u51fa\u7684\u8d26\u5355\u6587\u4ef6,\u91cd\u590d\u6570\u636e\u81ea\u52a8\u8df3\u8fc7"
+    const-string v2, "\u9009\u62e9\u672c\u5e94\u7528\u5bfc\u51fa\u7684\u8d26\u5355 CSV,\u91cd\u590d\u6570\u636e\u81ea\u52a8\u8df3\u8fc7"
 
     const-wide/16 v3, 0x0
 
