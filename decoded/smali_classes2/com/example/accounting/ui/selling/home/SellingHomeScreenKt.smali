@@ -3481,7 +3481,9 @@
 
     move-result v1
 
-    if-lez v1, :cond_7
+    const/16 v2, 0x30
+
+    if-le v1, v2, :cond_7
 
     const/high16 v1, 0x3f800000    # 1.0f
 
