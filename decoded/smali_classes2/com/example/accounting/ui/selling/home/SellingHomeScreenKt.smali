@@ -4207,7 +4207,17 @@
 
     move-object/from16 v9, v21
 
-    invoke-direct {v1, v13, v15, v11, v9}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6;-><init>(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/MutableState;Landroidx/compose/runtime/State;)V
+    move-object v2, v13
+
+    move-object v3, v15
+
+    move-object v4, v11
+
+    move-object v5, v9
+
+    move-object/from16 v6, p4
+
+    invoke-direct/range {v1 .. v6}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6;-><init>(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/MutableState;Landroidx/compose/runtime/State;Lkotlin/jvm/functions/Function1;)V
 
     const v2, 0x770dff2e
 

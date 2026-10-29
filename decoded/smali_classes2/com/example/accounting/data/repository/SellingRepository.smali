@@ -804,6 +804,29 @@
     return-object p1
 .end method
 
+.method public final getAllProducts(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Ljava/util/List<",
+            "Lcom/example/accounting/data/entity/Product;",
+            ">;>;)",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lcom/example/accounting/data/repository/SellingRepository;->productDao:Lcom/example/accounting/data/dao/ProductDao;
+
+    invoke-interface {v0, p1}, Lcom/example/accounting/data/dao/ProductDao;->getAll(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public final getProduct(JLkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;

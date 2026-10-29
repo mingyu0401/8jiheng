@@ -48,6 +48,17 @@
 
 
 # instance fields
+.field final synthetic $onOpenShipping:Lkotlin/jvm/functions/Function1;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/jvm/functions/Function1<",
+            "Ljava/lang/Boolean;",
+            "Lkotlin/Unit;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field final synthetic $onOpenRecords:Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -90,7 +101,7 @@
 
 
 # direct methods
-.method constructor <init>(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/MutableState;Landroidx/compose/runtime/State;)V
+.method constructor <init>(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/MutableState;Landroidx/compose/runtime/State;Lkotlin/jvm/functions/Function1;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -117,6 +128,8 @@
     iput-object p3, p0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6;->$showExportConfirm$delegate:Landroidx/compose/runtime/MutableState;
 
     iput-object p4, p0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6;->$topFadeAlpha:Landroidx/compose/runtime/State;
+
+    iput-object p5, p0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6;->$onOpenShipping:Lkotlin/jvm/functions/Function1;
 
     const/4 p1, 0x2
 
@@ -257,7 +270,9 @@
 
     iget-object v8, v0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6;->$showExportConfirm$delegate:Landroidx/compose/runtime/MutableState;
 
-    invoke-direct {v5, v6, v7, v8}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6$bar$1;-><init>(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/MutableState;)V
+    iget-object v9, v0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6;->$onOpenShipping:Lkotlin/jvm/functions/Function1;
+
+    invoke-direct {v5, v6, v7, v8, v9}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6$bar$1;-><init>(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/MutableState;Lkotlin/jvm/functions/Function1;)V
 
     check-cast v5, Lkotlin/jvm/functions/Function3;
 

@@ -53,22 +53,7 @@
 .end annotation
 
 
-# static fields
-.field public static final INSTANCE:Lcom/example/accounting/ui/daily/category/ComposableSingletons$CategoryScreenKt$lambda-4$1;
-
-
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lcom/example/accounting/ui/daily/category/ComposableSingletons$CategoryScreenKt$lambda-4$1;
-
-    invoke-direct {v0}, Lcom/example/accounting/ui/daily/category/ComposableSingletons$CategoryScreenKt$lambda-4$1;-><init>()V
-
-    sput-object v0, Lcom/example/accounting/ui/daily/category/ComposableSingletons$CategoryScreenKt$lambda-4$1;->INSTANCE:Lcom/example/accounting/ui/daily/category/ComposableSingletons$CategoryScreenKt$lambda-4$1;
-
-    return-void
-.end method
 
 .method constructor <init>()V
     .locals 1
@@ -173,7 +158,7 @@
 
     const v26, 0x1fffc
 
-    const-string v2, "\u7269\u54c1\u53f0\u8d26"
+    const-string v2, "\u5546\u54c1\u5217\u8868"
 
     const-wide/16 v4, 0x0
 

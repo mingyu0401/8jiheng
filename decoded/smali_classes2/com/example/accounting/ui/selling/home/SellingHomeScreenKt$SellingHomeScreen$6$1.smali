@@ -54,6 +54,17 @@
 
 
 # instance fields
+.field final synthetic $onOpenShipping:Lkotlin/jvm/functions/Function1;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/jvm/functions/Function1<",
+            "Ljava/lang/Boolean;",
+            "Lkotlin/Unit;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field final synthetic $onOpenRecords:Lkotlin/jvm/functions/Function0;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -86,7 +97,7 @@
 
 
 # direct methods
-.method constructor <init>(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/MutableState;)V
+.method constructor <init>(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/MutableState;Lkotlin/jvm/functions/Function1;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -108,6 +119,8 @@
     iput-object p2, p0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6$1;->$onOpenStats:Lkotlin/jvm/functions/Function0;
 
     iput-object p3, p0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6$1;->$showExportConfirm$delegate:Landroidx/compose/runtime/MutableState;
+
+    iput-object p4, p0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6$1;->$onOpenShipping:Lkotlin/jvm/functions/Function1;
 
     const/4 p1, 0x3
 
@@ -185,6 +198,36 @@
     invoke-static {v3, p3, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     :cond_2
+    new-instance v0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6$1$logistics$1;
+
+    iget-object v1, p0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6$1;->$onOpenShipping:Lkotlin/jvm/functions/Function1;
+
+    invoke-direct {v0, v1}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6$1$logistics$1;-><init>(Lkotlin/jvm/functions/Function1;)V
+
+    check-cast v0, Lkotlin/jvm/functions/Function0;
+
+    new-instance v5, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6$1$logisticsIcon$1;
+
+    invoke-direct {v5}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6$1$logisticsIcon$1;-><init>()V
+
+    check-cast v5, Lkotlin/jvm/functions/Function2;
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    move-object v6, p2
+
+    const/high16 v7, 0x30000
+
+    const/16 v8, 0x1e
+
+    invoke-static/range {v0 .. v8}, Landroidx/compose/material3/IconButtonKt;->IconButton(Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;ZLandroidx/compose/material3/IconButtonColors;Landroidx/compose/foundation/interaction/MutableInteractionSource;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V
+
     iget-object v0, p0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6$1;->$onOpenRecords:Lkotlin/jvm/functions/Function0;
 
     sget-object v1, Lcom/example/accounting/ui/selling/home/ComposableSingletons$SellingHomeScreenKt;->INSTANCE:Lcom/example/accounting/ui/selling/home/ComposableSingletons$SellingHomeScreenKt;
