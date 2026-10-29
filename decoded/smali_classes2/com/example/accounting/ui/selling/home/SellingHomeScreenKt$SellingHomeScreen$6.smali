@@ -263,8 +263,6 @@
 
     move-result v3
 
-    mul-float/2addr v3, v1
-
     add-float/2addr v2, v3
 
     .line 178

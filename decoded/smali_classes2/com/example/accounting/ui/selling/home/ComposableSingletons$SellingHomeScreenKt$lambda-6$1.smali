@@ -227,7 +227,7 @@
 
     const/16 v23, 0x0
 
-    const v24, 0x1fff2
+    const v24, 0x1eff2
 
     const-string v0, "\u6dfb\u52a0\u7269\u54c1"
 
@@ -251,7 +251,7 @@
 
     move/from16 v15, v16
 
-    const/16 v17, 0x0
+    const/16 v17, 0x1
 
     const/16 v18, 0x0
 
