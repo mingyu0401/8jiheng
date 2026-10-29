@@ -115,6 +115,8 @@
 
 .field label:I
 
+.field soldIds:Ljava/util/Set;
+
 .field final synthetic this$0:Lcom/example/accounting/ui/selling/home/SellingHomeViewModel;
 
 
@@ -345,9 +347,56 @@
 
     check-cast v13, Ljava/util/List;
 
+    .line 334
+    const/4 v14, 0x6
+
+    aget-object v14, v2, v14
+
+    const-string v15, "null cannot be cast to non-null type kotlin.collections.List<com.example.accounting.data.entity.SaleRecord>"
+
+    invoke-static {v14, v15}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    check-cast v14, Ljava/util/List;
+
+    new-instance v15, Ljava/util/HashSet;
+
+    invoke-direct {v15}, Ljava/util/HashSet;-><init>()V
+
+    invoke-interface {v14}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v14
+
+    :goto_soldids
+    invoke-interface {v14}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v16
+
+    if-eqz v16, :cond_soldids_done
+
+    invoke-interface {v14}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    check-cast v3, Lcom/example/accounting/data/entity/SaleRecord;
+
+    invoke-virtual {v3}, Lcom/example/accounting/data/entity/SaleRecord;->getProductId()J
+
+    move-result-wide v17
+
+    invoke-static/range {v17 .. v18}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    invoke-virtual {v15, v4}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    goto :goto_soldids
+
+    :cond_soldids_done
+    iput-object v15, v0, Lcom/example/accounting/ui/selling/home/SellingHomeViewModel$loadOverview$1$invokeSuspend$$inlined$combine$1$3;->soldIds:Ljava/util/Set;
+
     const/4 v14, 0x5
 
-    .line 334
+    .line 335
     aget-object v2, v2, v14
 
     const-string v14, "null cannot be cast to non-null type kotlin.collections.List<com.example.accounting.data.entity.Product>"
@@ -414,6 +463,21 @@
     invoke-virtual {v3}, Ljava/lang/Number;->doubleValue()D
 
     move-result-wide v17
+
+    iget-object v4, v0, Lcom/example/accounting/ui/selling/home/SellingHomeViewModel$loadOverview$1$invokeSuspend$$inlined$combine$1$3;->soldIds:Ljava/util/Set;
+
+    if-nez v4, :cond_soldids_ready
+
+    new-instance v4, Ljava/util/HashSet;
+
+    invoke-direct {v4}, Ljava/util/HashSet;-><init>()V
+
+    iput-object v4, v0, Lcom/example/accounting/ui/selling/home/SellingHomeViewModel$loadOverview$1$invokeSuspend$$inlined$combine$1$3;->soldIds:Ljava/util/Set;
+
+    :cond_soldids_ready
+    sget-object v5, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt;->soldIdsState:Landroidx/compose/runtime/MutableState;
+
+    invoke-interface {v5, v4}, Landroidx/compose/runtime/MutableState;->setValue(Ljava/lang/Object;)V
 
     .line 336
     new-instance v2, Lcom/example/accounting/ui/selling/home/SellingHomeState;

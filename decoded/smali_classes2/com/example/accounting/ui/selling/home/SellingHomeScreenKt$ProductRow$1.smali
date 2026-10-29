@@ -1555,10 +1555,43 @@
     check-cast v1, Landroidx/compose/foundation/layout/RowScope;
 
     .line 598
+    sget-object v9, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt;->soldIdsState:Landroidx/compose/runtime/MutableState;
+
+    invoke-interface {v9}, Landroidx/compose/runtime/MutableState;->getValue()Ljava/lang/Object;
+
+    move-result-object v9
+
+    check-cast v9, Ljava/util/Set;
+
+    move-object/from16 v10, p0
+
+    iget-object v10, v10, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$ProductRow$1;->$product:Lcom/example/accounting/data/entity/Product;
+
+    invoke-virtual {v10}, Lcom/example/accounting/data/entity/Product;->getId()J
+
+    move-result-wide v11
+
+    invoke-static {v11, v12}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v11
+
+    invoke-interface {v9, v11}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v9
+
     sget-object v1, Landroidx/compose/material/icons/Icons$Filled;->INSTANCE:Landroidx/compose/material/icons/Icons$Filled;
+
+    if-eqz v9, :icon_sold
 
     if-eqz v28, :cond_14
 
+    invoke-static {v1}, Landroidx/compose/material/icons/filled/CheckCircleKt;->getCheckCircle(Landroidx/compose/material/icons/Icons$Filled;)Landroidx/compose/ui/graphics/vector/ImageVector;
+
+    move-result-object v1
+
+    goto :goto_5
+
+    :icon_sold
     invoke-static {v1}, Landroidx/compose/material/icons/filled/CheckCircleKt;->getCheckCircle(Landroidx/compose/material/icons/Icons$Filled;)Landroidx/compose/ui/graphics/vector/ImageVector;
 
     move-result-object v1
@@ -1571,10 +1604,17 @@
     move-result-object v1
 
     :goto_5
+    if-eqz v9, :label_sold
+
     if-eqz v28, :cond_15
 
     .line 599
     const-string v2, "\u5df2\u5230\u8d27"
+
+    goto :goto_6
+
+    :label_sold
+    const-string v2, "\u5df2\u5356\u51fa"
 
     goto :goto_6
 
@@ -1584,6 +1624,15 @@
     :goto_6
     const/4 v7, 0x0
 
+    if-eqz v9, :tint_sold_skip
+
+    const/4 v12, 0x0
+
+    invoke-static {v0, v12}, Lcom/example/accounting/ui/theme/ColorKt;->getTextSecondary(Landroidx/compose/runtime/Composer;I)J
+
+    move-result-wide v36
+
+    :tint_sold_skip
     move-wide/from16 v3, v36
 
     move-object/from16 v5, v33

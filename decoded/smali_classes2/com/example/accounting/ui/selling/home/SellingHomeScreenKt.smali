@@ -84,8 +84,30 @@
 
 .field public static volatile lastScrollValue:I
 
+.field public static volatile soldIdsState:Landroidx/compose/runtime/MutableState;
+
 
 # direct methods
+.method static constructor <clinit>()V
+    .locals 3
+
+    new-instance v0, Ljava/util/HashSet;
+
+    invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x2
+
+    invoke-static {v0, v1, v2, v1}, Landroidx/compose/runtime/SnapshotStateKt;->mutableStateOf$default(Ljava/lang/Object;Landroidx/compose/runtime/SnapshotMutationPolicy;ILjava/lang/Object;)Landroidx/compose/runtime/MutableState;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt;->soldIdsState:Landroidx/compose/runtime/MutableState;
+
+    return-void
+.end method
+
 .method private static final HeaderMiniItem(Ljava/lang/String;Ljava/lang/String;Landroidx/compose/runtime/Composer;I)V
     .locals 27
 
@@ -1402,8 +1424,28 @@
 
     invoke-static {v0, v3, v7, v8}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
-    .line 540
     :cond_c
+    .line 540
+    sget-object v2, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt;->soldIdsState:Landroidx/compose/runtime/MutableState;
+
+    invoke-interface {v2}, Landroidx/compose/runtime/MutableState;->getValue()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/util/Set;
+
+    invoke-virtual/range {p0 .. p0}, Lcom/example/accounting/data/entity/Product;->getId()J
+
+    move-result-wide v4
+
+    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v4
+
+    invoke-interface {v2, v4}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+
+    move-result v2
+
     invoke-virtual/range {p0 .. p0}, Lcom/example/accounting/data/entity/Product;->getArrived()Z
 
     move-result v0
@@ -1464,6 +1506,13 @@
 
     move-wide v8, v7
 
+    if-eqz v2, :cond_sold_nogray
+
+    invoke-static {v1, v3}, Lcom/example/accounting/ui/theme/ColorKt;->getDisabledBg(Landroidx/compose/runtime/Composer;I)J
+
+    move-result-wide v8
+
+    :cond_sold_nogray
     .line 544
     sget-object v7, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
 

@@ -179,7 +179,7 @@
 .end method
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 8
+    .locals 9
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
@@ -213,7 +213,9 @@
     const/4 p1, 0x6
 
     .line 52
-    new-array v1, p1, [Lkotlinx/coroutines/flow/Flow;
+    const/4 v8, 0x7
+
+    new-array v1, v8, [Lkotlinx/coroutines/flow/Flow;
 
     iget-object v3, p0, Lcom/example/accounting/ui/selling/home/SellingHomeViewModel$loadOverview$1;->this$0:Lcom/example/accounting/ui/selling/home/SellingHomeViewModel;
 
@@ -347,6 +349,21 @@
     move-result-object p1
 
     const/4 v3, 0x5
+
+    aput-object p1, v1, v3
+
+    .line 58
+    iget-object p1, p0, Lcom/example/accounting/ui/selling/home/SellingHomeViewModel$loadOverview$1;->this$0:Lcom/example/accounting/ui/selling/home/SellingHomeViewModel;
+
+    invoke-static {p1}, Lcom/example/accounting/ui/selling/home/SellingHomeViewModel;->access$getRepo$p(Lcom/example/accounting/ui/selling/home/SellingHomeViewModel;)Lcom/example/accounting/data/repository/SellingRepository;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/example/accounting/data/repository/SellingRepository;->observeAllSales()Lkotlinx/coroutines/flow/Flow;
+
+    move-result-object p1
+
+    const/4 v3, 0x6
 
     aput-object p1, v1, v3
 
