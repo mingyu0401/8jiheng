@@ -1378,6 +1378,12 @@
     goto/16 :tab_recent
 
     :tab_ledger
+    move-object/from16 v0, p2
+
+    const v1, 0x5a1e0001
+
+    invoke-interface {v0, v1}, Landroidx/compose/runtime/Composer;->startReplaceableGroup(I)V
+
     .line 306
     sget-object v1, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
 
@@ -2669,10 +2675,16 @@
 
     const/4 v15, 0x6
 
+    invoke-interface {v0}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
+
     goto/16 :goto_c
 
     :tab_recent
     move-object/from16 v15, p2
+
+    const v1, 0x5a1e0002
+
+    invoke-interface {v15, v1}, Landroidx/compose/runtime/Composer;->startReplaceableGroup(I)V
 
     const/4 v0, 0x1
 
@@ -3337,6 +3349,8 @@
     invoke-static/range {v1 .. v9}, Landroidx/compose/material3/CardKt;->Card(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/Shape;Landroidx/compose/material3/CardColors;Landroidx/compose/material3/CardElevation;Landroidx/compose/foundation/BorderStroke;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V
 
     .line 450
+    invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
+
     invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     goto/16 :goto_c
