@@ -1,4 +1,4 @@
-# Rebuild and sign the decoded APK
+﻿# Rebuild and sign the decoded APK
 [CmdletBinding()]
 param(
   [string]$ApktoolProject = "",
@@ -34,7 +34,7 @@ if (-not $ReleaseVersion) {
 }
 $downloads = if ($ReleaseRoot) { $ReleaseRoot } else { Join-Path $env:USERPROFILE 'Downloads' }
 New-Item -ItemType Directory -Force -Path $downloads | Out-Null
-$releaseName = "hengji-release-v$ReleaseVersion.apk"
+$releaseName = "8衡记-v$ReleaseVersion.apk"
 $releasePath = Join-Path $downloads $releaseName
 Copy-Item -LiteralPath $signed.FullName -Destination $releasePath -Force
 Write-Host "DONE: $($signed.FullName)"
