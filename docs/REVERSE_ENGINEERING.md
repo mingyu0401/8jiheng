@@ -49,6 +49,10 @@ Manifest 中没有 INTERNET、相机、定位、无障碍等权限；只有 Andr
 4. 偏好：DataStore keys 为 theme_mode、user_nickname、user_avatar_path。
 5. 当前是本地优先应用，数据主要落在 Room + DataStore。接入云同步需要网络层、权限、认证、冲突策略和加密。
 
+## Release 交付
+
+默认构建脚本会读取 decoded/apktool.yml 的 versionName，并将签名后的 Release APK 复制为 `hengji-release-v<versionName>.apk` 到当前用户 Downloads。也可使用 `-ReleaseRoot` 指定其他输出目录。
+
 ## 重建、签名、安装
 修改 decoded 后运行：
 
