@@ -79,6 +79,12 @@
 .end annotation
 
 
+# static fields
+.field public static volatile headerCollapsed:Z
+
+.field public static volatile lastScrollValue:I
+
+
 # direct methods
 .method private static final HeaderMiniItem(Ljava/lang/String;Ljava/lang/String;Landroidx/compose/runtime/Composer;I)V
     .locals 27
@@ -3481,15 +3487,43 @@
 
     move-result v1
 
-    const/16 v2, 0x30
+    sget v2, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt;->lastScrollValue:I
 
-    if-le v1, v2, :cond_7
+    sput v1, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt;->lastScrollValue:I
+
+    if-le v1, v2, :cond_70
+
+    const/4 v2, 0x1
+
+    sput-boolean v2, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt;->headerCollapsed:Z
+
+    goto :goto_70
+
+    :cond_70
+    if-ge v1, v2, :cond_71
+
+    const/4 v2, 0x0
+
+    sput-boolean v2, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt;->headerCollapsed:Z
+
+    :cond_71
+    :goto_70
+    if-gtz v1, :cond_72
+
+    const/4 v2, 0x0
+
+    sput-boolean v2, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt;->headerCollapsed:Z
+
+    :cond_72
+    sget-boolean v2, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt;->headerCollapsed:Z
+
+    if-eqz v2, :cond_73
 
     const/high16 v1, 0x3f800000    # 1.0f
 
     goto :goto_1
 
-    :cond_7
+    :cond_73
     const/4 v1, 0x0
 
     :goto_1
@@ -4104,7 +4138,9 @@
     .line 172
     new-instance v1, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6;
 
-    invoke-direct {v1, v13, v15, v11}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6;-><init>(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/MutableState;)V
+    move-object/from16 v9, v21
+
+    invoke-direct {v1, v13, v15, v11, v9}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6;-><init>(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/MutableState;Landroidx/compose/runtime/State;)V
 
     const v2, 0x770dff2e
 

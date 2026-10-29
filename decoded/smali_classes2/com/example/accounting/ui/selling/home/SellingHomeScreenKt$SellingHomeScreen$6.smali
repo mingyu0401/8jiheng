@@ -78,9 +78,19 @@
     .end annotation
 .end field
 
+.field final synthetic $topFadeAlpha:Landroidx/compose/runtime/State;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroidx/compose/runtime/State<",
+            "Ljava/lang/Float;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 
 # direct methods
-.method constructor <init>(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/MutableState;)V
+.method constructor <init>(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/MutableState;Landroidx/compose/runtime/State;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -93,6 +103,9 @@
             ">;",
             "Landroidx/compose/runtime/MutableState<",
             "Ljava/lang/Boolean;",
+            ">;",
+            "Landroidx/compose/runtime/State<",
+            "Ljava/lang/Float;",
             ">;)V"
         }
     .end annotation
@@ -102,6 +115,8 @@
     iput-object p2, p0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6;->$onOpenStats:Lkotlin/jvm/functions/Function0;
 
     iput-object p3, p0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6;->$showExportConfirm$delegate:Landroidx/compose/runtime/MutableState;
+
+    iput-object p4, p0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6;->$topFadeAlpha:Landroidx/compose/runtime/State;
 
     const/4 p1, 0x2
 
@@ -177,86 +192,83 @@
     invoke-static {v4, v1, v2, v3}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     :cond_2
-    sget-object v1, Lcom/example/accounting/ui/selling/home/ComposableSingletons$SellingHomeScreenKt;->INSTANCE:Lcom/example/accounting/ui/selling/home/ComposableSingletons$SellingHomeScreenKt;
+    iget-object v1, v0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6;->$topFadeAlpha:Landroidx/compose/runtime/State;
 
-    invoke-virtual {v1}, Lcom/example/accounting/ui/selling/home/ComposableSingletons$SellingHomeScreenKt;->getLambda-1$app_release()Lkotlin/jvm/functions/Function2;
+    invoke-interface {v1}, Landroidx/compose/runtime/State;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Number;
+
+    invoke-virtual {v1}, Ljava/lang/Number;->floatValue()F
+
+    move-result v1
+
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    sub-float/2addr v2, v1
+
+    const/high16 v1, 0x42800000    # 64.0f
+
+    mul-float/2addr v2, v1
+
+    .line 178
+    invoke-static {v2}, Landroidx/compose/ui/unit/Dp;->constructor-impl(F)F
+
+    move-result v2
+
+    .line 177
+    sget-object v1, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
+
+    check-cast v1, Landroidx/compose/ui/Modifier;
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x1
+
+    const/4 v5, 0x0
+
+    invoke-static {v1, v5, v4, v3}, Landroidx/compose/foundation/layout/SizeKt;->fillMaxWidth$default(Landroidx/compose/ui/Modifier;FILjava/lang/Object;)Landroidx/compose/ui/Modifier;
+
+    move-result-object v1
+
+    invoke-static {v1, v2}, Landroidx/compose/foundation/layout/SizeKt;->height-3ABfNKs(Landroidx/compose/ui/Modifier;F)Landroidx/compose/ui/Modifier;
+
+    move-result-object v1
+
+    invoke-static {v1}, Landroidx/compose/ui/draw/ClipKt;->clipToBounds(Landroidx/compose/ui/Modifier;)Landroidx/compose/ui/Modifier;
 
     move-result-object v2
 
     .line 175
-    new-instance v1, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6$1;
+    sget-object v3, Landroidx/compose/ui/Alignment;->Companion:Landroidx/compose/ui/Alignment$Companion;
 
-    iget-object v3, v0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6;->$onOpenRecords:Lkotlin/jvm/functions/Function0;
+    invoke-virtual {v3}, Landroidx/compose/ui/Alignment$Companion;->getBottomStart()Landroidx/compose/ui/Alignment;
 
-    iget-object v4, v0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6;->$onOpenStats:Lkotlin/jvm/functions/Function0;
-
-    iget-object v5, v0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6;->$showExportConfirm$delegate:Landroidx/compose/runtime/MutableState;
-
-    invoke-direct {v1, v3, v4, v5}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6$1;-><init>(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/MutableState;)V
-
-    const v3, 0x226e6d5d
-
-    const/4 v4, 0x1
-
-    move-object/from16 v14, p1
-
-    invoke-static {v14, v3, v4, v1}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->composableLambda(Landroidx/compose/runtime/Composer;IZLjava/lang/Object;)Landroidx/compose/runtime/internal/ComposableLambda;
-
-    move-result-object v1
-
-    check-cast v1, Lkotlin/jvm/functions/Function3;
-
-    .line 186
-    sget-object v5, Landroidx/compose/material3/TopAppBarDefaults;->INSTANCE:Landroidx/compose/material3/TopAppBarDefaults;
-
-    sget-object v3, Landroidx/compose/ui/graphics/Color;->Companion:Landroidx/compose/ui/graphics/Color$Companion;
-
-    invoke-virtual {v3}, Landroidx/compose/ui/graphics/Color$Companion;->getTransparent-0d7_KjU()J
-
-    move-result-wide v6
-
-    sget v3, Landroidx/compose/material3/TopAppBarDefaults;->$stable:I
-
-    shl-int/lit8 v3, v3, 0xf
-
-    or-int/lit8 v17, v3, 0x6
-
-    const/16 v18, 0x1e
-
-    const-wide/16 v8, 0x0
-
-    const-wide/16 v10, 0x0
-
-    const-wide/16 v12, 0x0
-
-    const-wide/16 v3, 0x0
-
-    move-wide v14, v3
-
-    move-object/from16 v16, p1
-
-    invoke-virtual/range {v5 .. v18}, Landroidx/compose/material3/TopAppBarDefaults;->topAppBarColors-zjMxDiM(JJJJJLandroidx/compose/runtime/Composer;II)Landroidx/compose/material3/TopAppBarColors;
-
-    move-result-object v7
-
-    const/16 v10, 0xc06
-
-    const/16 v11, 0x56
-
-    const/4 v3, 0x0
+    move-result-object v3
 
     const/4 v4, 0x0
 
-    const/4 v6, 0x0
+    new-instance v5, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6$bar$1;
+
+    iget-object v6, v0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6;->$onOpenRecords:Lkotlin/jvm/functions/Function0;
+
+    iget-object v7, v0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6;->$onOpenStats:Lkotlin/jvm/functions/Function0;
+
+    iget-object v8, v0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6;->$showExportConfirm$delegate:Landroidx/compose/runtime/MutableState;
+
+    invoke-direct {v5, v6, v7, v8}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6$bar$1;-><init>(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;Landroidx/compose/runtime/MutableState;)V
+
+    check-cast v5, Lkotlin/jvm/functions/Function3;
+
+    move-object/from16 v6, p1
+
+    const/4 v7, 0x0
 
     const/4 v8, 0x0
 
-    move-object v5, v1
-
-    move-object/from16 v9, p1
-
     .line 173
-    invoke-static/range {v2 .. v11}, Landroidx/compose/material3/AppBarKt;->TopAppBar(Lkotlin/jvm/functions/Function2;Landroidx/compose/ui/Modifier;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function3;Landroidx/compose/foundation/layout/WindowInsets;Landroidx/compose/material3/TopAppBarColors;Landroidx/compose/material3/TopAppBarScrollBehavior;Landroidx/compose/runtime/Composer;II)V
+    invoke-static/range {v2 .. v8}, Landroidx/compose/foundation/layout/BoxKt;->Box(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/Alignment;ZLkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V
 
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 

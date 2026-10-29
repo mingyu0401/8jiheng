@@ -1426,7 +1426,255 @@
 
     invoke-static {v3, v0, v1, v2}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt;->access$HeaderMiniItem(Ljava/lang/String;Ljava/lang/String;Landroidx/compose/runtime/Composer;I)V
 
+    .line 834
+    invoke-static/range {p2 .. p2}, Landroidx/compose/runtime/ComposerKt;->sourceInformationMarkerEnd(Landroidx/compose/runtime/Composer;)V
+
+    .line 835
+    invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
+
+    .line 836
+    invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->endNode()V
+
+    .line 837
+    invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
+
+    .line 838
+    invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
+
+    .line 250
+    sget-object v0, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
+
+    check-cast v0, Landroidx/compose/ui/Modifier;
+
+    const/16 v1, 0xc
+
+    int-to-float v1, v1
+
+    .line 800
+    invoke-static {v1}, Landroidx/compose/ui/unit/Dp;->constructor-impl(F)F
+
+    move-result v1
+
+    .line 250
+    invoke-static {v0, v1}, Landroidx/compose/foundation/layout/SizeKt;->height-3ABfNKs(Landroidx/compose/ui/Modifier;F)Landroidx/compose/ui/Modifier;
+
+    move-result-object v0
+
+    move-object/from16 v1, p2
+
+    const/4 v2, 0x6
+
+    invoke-static {v0, v1, v2}, Landroidx/compose/foundation/layout/SpacerKt;->Spacer(Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;I)V
+
+    .line 252
+    sget-object v0, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
+
+    check-cast v0, Landroidx/compose/ui/Modifier;
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x1
+
+    const/4 v5, 0x0
+
+    invoke-static {v0, v5, v4, v3}, Landroidx/compose/foundation/layout/SizeKt;->fillMaxWidth$default(Landroidx/compose/ui/Modifier;FILjava/lang/Object;)Landroidx/compose/ui/Modifier;
+
+    move-result-object v0
+
     .line 253
+    sget-object v3, Landroidx/compose/foundation/layout/Arrangement;->INSTANCE:Landroidx/compose/foundation/layout/Arrangement;
+
+    invoke-virtual {v3}, Landroidx/compose/foundation/layout/Arrangement;->getSpaceBetween()Landroidx/compose/foundation/layout/Arrangement$HorizontalOrVertical;
+
+    move-result-object v3
+
+    check-cast v3, Landroidx/compose/foundation/layout/Arrangement$Horizontal;
+
+    const v4, 0x2952b718
+
+    .line 251
+    invoke-interface {v1, v4}, Landroidx/compose/runtime/Composer;->startReplaceableGroup(I)V
+
+    move-object/from16 v4, v25
+
+    invoke-static {v1, v4}, Landroidx/compose/runtime/ComposerKt;->sourceInformation(Landroidx/compose/runtime/Composer;Ljava/lang/String;)V
+
+    .line 801
+    sget-object v4, Landroidx/compose/ui/Alignment;->Companion:Landroidx/compose/ui/Alignment$Companion;
+
+    invoke-virtual {v4}, Landroidx/compose/ui/Alignment$Companion;->getTop()Landroidx/compose/ui/Alignment$Vertical;
+
+    move-result-object v4
+
+    .line 804
+    invoke-static {v3, v4, v1, v2}, Landroidx/compose/foundation/layout/RowKt;->rowMeasurePolicy(Landroidx/compose/foundation/layout/Arrangement$Horizontal;Landroidx/compose/ui/Alignment$Vertical;Landroidx/compose/runtime/Composer;I)Landroidx/compose/ui/layout/MeasurePolicy;
+
+    move-result-object v3
+
+    const v4, -0x4ee9b9da
+
+    .line 805
+    invoke-interface {v1, v4}, Landroidx/compose/runtime/Composer;->startReplaceableGroup(I)V
+
+    move-object/from16 v4, v30
+
+    invoke-static {v1, v4}, Landroidx/compose/runtime/ComposerKt;->sourceInformation(Landroidx/compose/runtime/Composer;Ljava/lang/String;)V
+
+    const/4 v4, 0x0
+
+    .line 806
+    invoke-static {v1, v4}, Landroidx/compose/runtime/ComposablesKt;->getCurrentCompositeKeyHash(Landroidx/compose/runtime/Composer;I)I
+
+    move-result v5
+
+    .line 807
+    invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->getCurrentCompositionLocalMap()Landroidx/compose/runtime/CompositionLocalMap;
+
+    move-result-object v6
+
+    .line 809
+    sget-object v7, Landroidx/compose/ui/node/ComposeUiNode;->Companion:Landroidx/compose/ui/node/ComposeUiNode$Companion;
+
+    invoke-virtual {v7}, Landroidx/compose/ui/node/ComposeUiNode$Companion;->getConstructor()Lkotlin/jvm/functions/Function0;
+
+    move-result-object v7
+
+    .line 816
+    invoke-static {v0}, Landroidx/compose/ui/layout/LayoutKt;->modifierMaterializerOf(Landroidx/compose/ui/Modifier;)Lkotlin/jvm/functions/Function3;
+
+    move-result-object v0
+
+    .line 817
+    invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->getApplier()Landroidx/compose/runtime/Applier;
+
+    move-result-object v8
+
+    instance-of v8, v8, Landroidx/compose/runtime/Applier;
+
+    if-nez v8, :cond_30
+
+    invoke-static {}, Landroidx/compose/runtime/ComposablesKt;->invalidApplier()V
+
+    .line 818
+    :cond_30
+    invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->startReusableNode()V
+
+    .line 819
+    invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->getInserting()Z
+
+    move-result v8
+
+    if-eqz v8, :cond_31
+
+    .line 820
+    invoke-interface {v1, v7}, Landroidx/compose/runtime/Composer;->createNode(Lkotlin/jvm/functions/Function0;)V
+
+    goto :goto_30
+
+    .line 822
+    :cond_31
+    invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->useNode()V
+
+    .line 824
+    :goto_30
+    invoke-static/range {p2 .. p2}, Landroidx/compose/runtime/Updater;->constructor-impl(Landroidx/compose/runtime/Composer;)Landroidx/compose/runtime/Composer;
+
+    move-result-object v7
+
+    .line 811
+    sget-object v8, Landroidx/compose/ui/node/ComposeUiNode;->Companion:Landroidx/compose/ui/node/ComposeUiNode$Companion;
+
+    invoke-virtual {v8}, Landroidx/compose/ui/node/ComposeUiNode$Companion;->getSetMeasurePolicy()Lkotlin/jvm/functions/Function2;
+
+    move-result-object v8
+
+    invoke-static {v7, v3, v8}, Landroidx/compose/runtime/Updater;->set-impl(Landroidx/compose/runtime/Composer;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V
+
+    .line 812
+    sget-object v3, Landroidx/compose/ui/node/ComposeUiNode;->Companion:Landroidx/compose/ui/node/ComposeUiNode$Companion;
+
+    invoke-virtual {v3}, Landroidx/compose/ui/node/ComposeUiNode$Companion;->getSetResolvedCompositionLocals()Lkotlin/jvm/functions/Function2;
+
+    move-result-object v3
+
+    invoke-static {v7, v6, v3}, Landroidx/compose/runtime/Updater;->set-impl(Landroidx/compose/runtime/Composer;Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V
+
+    .line 814
+    sget-object v3, Landroidx/compose/ui/node/ComposeUiNode;->Companion:Landroidx/compose/ui/node/ComposeUiNode$Companion;
+
+    invoke-virtual {v3}, Landroidx/compose/ui/node/ComposeUiNode$Companion;->getSetCompositeKeyHash()Lkotlin/jvm/functions/Function2;
+
+    move-result-object v3
+
+    .line 826
+    invoke-interface {v7}, Landroidx/compose/runtime/Composer;->getInserting()Z
+
+    move-result v6
+
+    if-nez v6, :cond_32
+
+    invoke-interface {v7}, Landroidx/compose/runtime/Composer;->rememberedValue()Ljava/lang/Object;
+
+    move-result-object v6
+
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v8
+
+    invoke-static {v6, v8}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v6
+
+    if-nez v6, :cond_33
+
+    .line 827
+    :cond_32
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v6
+
+    invoke-interface {v7, v6}, Landroidx/compose/runtime/Composer;->updateRememberedValue(Ljava/lang/Object;)V
+
+    .line 828
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    invoke-interface {v7, v5, v3}, Landroidx/compose/runtime/Composer;->apply(Ljava/lang/Object;Lkotlin/jvm/functions/Function2;)V
+
+    .line 831
+    :cond_33
+    invoke-static/range {p2 .. p2}, Landroidx/compose/runtime/SkippableUpdater;->constructor-impl(Landroidx/compose/runtime/Composer;)Landroidx/compose/runtime/Composer;
+
+    move-result-object v3
+
+    invoke-static {v3}, Landroidx/compose/runtime/SkippableUpdater;->box-impl(Landroidx/compose/runtime/Composer;)Landroidx/compose/runtime/SkippableUpdater;
+
+    move-result-object v3
+
+    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v4
+
+    invoke-interface {v0, v3, v1, v4}, Lkotlin/jvm/functions/Function3;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    const v0, 0x7ab4aae9
+
+    .line 832
+    invoke-interface {v1, v0}, Landroidx/compose/runtime/Composer;->startReplaceableGroup(I)V
+
+    move-object/from16 v0, v26
+
+    const v3, -0x1378c42c
+
+    .line 834
+    invoke-static {v1, v3, v0}, Landroidx/compose/runtime/ComposerKt;->sourceInformationMarkerStart(Landroidx/compose/runtime/Composer;ILjava/lang/String;)V
+
+    sget-object v0, Landroidx/compose/foundation/layout/RowScopeInstance;->INSTANCE:Landroidx/compose/foundation/layout/RowScopeInstance;
+
+    check-cast v0, Landroidx/compose/foundation/layout/RowScope;
+
+    .line 254
     sget-object v0, Lcom/example/accounting/util/MoneyFormatter;->INSTANCE:Lcom/example/accounting/util/MoneyFormatter;
 
     invoke-static/range {v29 .. v29}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt;->access$SellingHomeScreen$lambda$0(Landroidx/compose/runtime/State;)Lcom/example/accounting/ui/selling/home/SellingHomeState;
@@ -1442,6 +1690,53 @@
     move-result-object v0
 
     const-string v3, "\u5df2\u5b8c\u6210\u672c\u91d1"
+
+    invoke-static {v3, v0, v1, v2}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt;->access$HeaderMiniItem(Ljava/lang/String;Ljava/lang/String;Landroidx/compose/runtime/Composer;I)V
+
+    .line 255
+    sget-object v0, Lcom/example/accounting/util/MoneyFormatter;->INSTANCE:Lcom/example/accounting/util/MoneyFormatter;
+
+    invoke-static/range {v29 .. v29}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt;->access$SellingHomeScreen$lambda$0(Landroidx/compose/runtime/State;)Lcom/example/accounting/ui/selling/home/SellingHomeState;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lcom/example/accounting/ui/selling/home/SellingHomeState;->getProducts()Ljava/util/List;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v6
+
+    const-wide/16 v8, 0x0
+
+    :goto_total_capital2
+    invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v7
+
+    if-eqz v7, :cond_total_capital2_done
+
+    invoke-interface {v6}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Lcom/example/accounting/data/entity/Product;
+
+    invoke-virtual {v7}, Lcom/example/accounting/data/entity/Product;->getTotalCost()D
+
+    move-result-wide v10
+
+    add-double/2addr v8, v10
+
+    goto :goto_total_capital2
+
+    :cond_total_capital2_done
+    invoke-virtual {v0, v8, v9}, Lcom/example/accounting/util/MoneyFormatter;->format(D)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v3, "\u7d2f\u8ba1\u672c\u91d1"
 
     invoke-static {v3, v0, v1, v2}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt;->access$HeaderMiniItem(Ljava/lang/String;Ljava/lang/String;Landroidx/compose/runtime/Composer;I)V
 
