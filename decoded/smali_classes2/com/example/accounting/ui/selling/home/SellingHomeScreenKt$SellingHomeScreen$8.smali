@@ -1260,6 +1260,108 @@
     .line 259
     invoke-static/range {v1 .. v9}, Landroidx/compose/material3/CardKt;->Card(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/Shape;Landroidx/compose/material3/CardColors;Landroidx/compose/material3/CardElevation;Landroidx/compose/foundation/BorderStroke;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V
 
+    .line 262
+    sget-object v1, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt;->sectionTabState:Landroidx/compose/runtime/MutableState;
+
+    invoke-interface/range {v1 .. v1}, Landroidx/compose/runtime/MutableState;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Integer;
+
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    sget-object v2, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
+
+    check-cast v2, Landroidx/compose/ui/Modifier;
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x1
+
+    const/4 v5, 0x0
+
+    invoke-static {v2, v3, v4, v5}, Landroidx/compose/foundation/layout/SizeKt;->fillMaxWidth$default(Landroidx/compose/ui/Modifier;FILjava/lang/Object;)Landroidx/compose/ui/Modifier;
+
+    move-result-object v2
+
+    const/16 v3, 0xc
+
+    int-to-float v3, v3
+
+    invoke-static {v3}, Landroidx/compose/ui/unit/Dp;->constructor-impl(F)F
+
+    move-result v3
+
+    const/16 v4, 0x6
+
+    int-to-float v4, v4
+
+    invoke-static {v4}, Landroidx/compose/ui/unit/Dp;->constructor-impl(F)F
+
+    move-result v4
+
+    const/16 v5, 0xc
+
+    int-to-float v5, v5
+
+    invoke-static {v5}, Landroidx/compose/ui/unit/Dp;->constructor-impl(F)F
+
+    move-result v5
+
+    const/16 v6, 0x0
+
+    int-to-float v6, v6
+
+    invoke-static {v6}, Landroidx/compose/ui/unit/Dp;->constructor-impl(F)F
+
+    move-result v6
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    invoke-static/range {v2 .. v8}, Landroidx/compose/foundation/layout/PaddingKt;->padding-qDBjuR0$default(Landroidx/compose/ui/Modifier;FFFFILjava/lang/Object;)Landroidx/compose/ui/Modifier;
+
+    move-result-object v2
+
+    new-instance v9, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$8$tabRow$1;
+
+    invoke-direct {v9}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$8$tabRow$1;-><init>()V
+
+    const v3, 0x2f7c1a4b
+
+    const/4 v4, 0x1
+
+    move-object/from16 v10, p2
+
+    invoke-static {v10, v3, v4, v9}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->composableLambda(Landroidx/compose/runtime/Composer;IZLjava/lang/Object;)Landroidx/compose/runtime/internal/ComposableLambda;
+
+    move-result-object v9
+
+    check-cast v9, Lkotlin/jvm/functions/Function2;
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const-wide/16 v3, 0x0
+
+    const-wide/16 v5, 0x0
+
+    const v11, 0x180000
+
+    const/16 v12, 0x3c
+
+    invoke-static/range {v1 .. v12}, Landroidx/compose/material3/TabRowKt;->TabRow-pAZo6Ak(ILandroidx/compose/ui/Modifier;JJLkotlin/jvm/functions/Function3;Lkotlin/jvm/functions/Function2;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V
+
+    if-eqz v1, :tab_ledger
+
+    goto/16 :tab_recent
+
+    :tab_ledger
     .line 306
     sget-object v1, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
 
@@ -1967,7 +2069,7 @@
 
     const v25, 0x1ffd6
 
-    const-string v1, "\u7269\u54c1\u53f0\u8d26"
+    const-string v1, "\u5546\u54c1\u5217\u8868"
 
     const/16 v18, 0x0
 
@@ -2493,6 +2595,9 @@
     .line 338
     invoke-static/range {v1 .. v9}, Landroidx/compose/material3/CardKt;->Card(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/graphics/Shape;Landroidx/compose/material3/CardColors;Landroidx/compose/material3/CardElevation;Landroidx/compose/foundation/BorderStroke;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V
 
+    goto/16 :goto_c
+
+    :tab_recent
     .line 431
     sget-object v1, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
 
@@ -2783,7 +2888,7 @@
     const v25, 0x1ffd4
 
     .line 440
-    const-string v1, "\u6700\u8fd1\u5356\u51fa"
+    const-string v1, "\u5356\u51fa\u8bb0\u5f55"
 
     const-wide/16 v3, 0x0
 

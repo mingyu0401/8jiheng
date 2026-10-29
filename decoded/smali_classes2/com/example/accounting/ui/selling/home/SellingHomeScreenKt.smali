@@ -84,6 +84,8 @@
 
 .field public static volatile lastScrollValue:I
 
+.field public static volatile sectionTabState:Landroidx/compose/runtime/MutableState;
+
 .field public static volatile soldIdsState:Landroidx/compose/runtime/MutableState;
 
 
@@ -104,6 +106,22 @@
     move-result-object v0
 
     sput-object v0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt;->soldIdsState:Landroidx/compose/runtime/MutableState;
+
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x2
+
+    invoke-static {v0, v1, v2, v1}, Landroidx/compose/runtime/SnapshotStateKt;->mutableStateOf$default(Ljava/lang/Object;Landroidx/compose/runtime/SnapshotMutationPolicy;ILjava/lang/Object;)Landroidx/compose/runtime/MutableState;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt;->sectionTabState:Landroidx/compose/runtime/MutableState;
 
     return-void
 .end method
