@@ -221,9 +221,51 @@
 
     sub-float/2addr v2, v1
 
-    const/high16 v1, 0x42800000    # 64.0f
+    const/high16 v3, 0x42800000    # 64.0f
 
-    mul-float/2addr v2, v1
+    mul-float/2addr v2, v3
+
+    invoke-static {}, Landroidx/compose/ui/platform/CompositionLocalsKt;->getLocalDensity()Landroidx/compose/runtime/ProvidableCompositionLocal;
+
+    move-result-object v3
+
+    check-cast v3, Landroidx/compose/runtime/CompositionLocal;
+
+    move-object/from16 v6, p1
+
+    const v4, 0x789c5f52
+
+    const-string v5, "CC:CompositionLocal.kt#9igjgp"
+
+    invoke-static {v6, v4, v5}, Landroidx/compose/runtime/ComposerKt;->sourceInformationMarkerStart(Landroidx/compose/runtime/Composer;ILjava/lang/String;)V
+
+    invoke-interface {v6, v3}, Landroidx/compose/runtime/Composer;->consume(Landroidx/compose/runtime/CompositionLocal;)Ljava/lang/Object;
+
+    move-result-object v3
+
+    invoke-static {v6}, Landroidx/compose/runtime/ComposerKt;->sourceInformationMarkerEnd(Landroidx/compose/runtime/Composer;)V
+
+    check-cast v3, Landroidx/compose/ui/unit/Density;
+
+    sget-object v4, Landroidx/compose/foundation/layout/WindowInsets;->Companion:Landroidx/compose/foundation/layout/WindowInsets$Companion;
+
+    const/16 v5, 0x8
+
+    invoke-static {v4, v6, v5}, Landroidx/compose/foundation/layout/WindowInsets_androidKt;->getStatusBars(Landroidx/compose/foundation/layout/WindowInsets$Companion;Landroidx/compose/runtime/Composer;I)Landroidx/compose/foundation/layout/WindowInsets;
+
+    move-result-object v4
+
+    invoke-interface {v4, v3}, Landroidx/compose/foundation/layout/WindowInsets;->getTop(Landroidx/compose/ui/unit/Density;)I
+
+    move-result v4
+
+    invoke-interface {v3, v4}, Landroidx/compose/ui/unit/Density;->toDp-u2uoSUM(I)F
+
+    move-result v3
+
+    mul-float/2addr v3, v1
+
+    add-float/2addr v2, v3
 
     .line 178
     invoke-static {v2}, Landroidx/compose/ui/unit/Dp;->constructor-impl(F)F

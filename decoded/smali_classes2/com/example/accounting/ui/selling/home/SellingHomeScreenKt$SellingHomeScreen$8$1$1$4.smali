@@ -2168,54 +2168,7 @@
     invoke-interface {v0, v1}, Landroidx/compose/runtime/Composer;->startReplaceableGroup(I)V
 
     .line 412
-    sget-object v1, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
-
-    check-cast v1, Landroidx/compose/ui/Modifier;
-
-    const/4 v2, 0x1
-
-    .line 413
-    invoke-static {v1, v5, v2, v4}, Landroidx/compose/foundation/layout/SizeKt;->fillMaxWidth$default(Landroidx/compose/ui/Modifier;FILjava/lang/Object;)Landroidx/compose/ui/Modifier;
-
-    move-result-object v1
-
-    const/16 v3, 0x140
-
-    int-to-float v3, v3
-
-    .line 908
-    invoke-static {v3}, Landroidx/compose/ui/unit/Dp;->constructor-impl(F)F
-
-    move-result v3
-
-    .line 414
-    invoke-static {v1, v5, v3, v2, v4}, Landroidx/compose/foundation/layout/SizeKt;->heightIn-VpY3zN4$default(Landroidx/compose/ui/Modifier;FFILjava/lang/Object;)Landroidx/compose/ui/Modifier;
-
-    move-result-object v1
-
-    .line 415
-    sget-object v2, Landroidx/compose/foundation/layout/Arrangement;->INSTANCE:Landroidx/compose/foundation/layout/Arrangement;
-
-    const/4 v3, 0x4
-
-    int-to-float v3, v3
-
-    .line 909
-    invoke-static {v3}, Landroidx/compose/ui/unit/Dp;->constructor-impl(F)F
-
-    move-result v3
-
-    .line 415
-    invoke-virtual {v2, v3}, Landroidx/compose/foundation/layout/Arrangement;->spacedBy-0680j_4(F)Landroidx/compose/foundation/layout/Arrangement$HorizontalOrVertical;
-
-    move-result-object v2
-
-    move-object v5, v2
-
-    check-cast v5, Landroidx/compose/foundation/layout/Arrangement$Vertical;
-
-    .line 411
-    new-instance v2, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$8$1$1$4$1$5;
+    new-instance v2, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$8$1$1$4$1$5$invoke$$inlined$items$default$4;
 
     move-object/from16 v7, v29
 
@@ -2225,32 +2178,69 @@
 
     move-object/from16 v3, v36
 
-    invoke-direct {v2, v3, v4, v6, v7}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$8$1$1$4$1$5;-><init>(Ljava/util/List;Lkotlin/jvm/functions/Function1;Lcom/example/accounting/ui/selling/home/SellingHomeViewModel;Landroidx/compose/runtime/MutableState;)V
+    invoke-direct {v2, v3, v4, v6, v7}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$8$1$1$4$1$5$invoke$$inlined$items$default$4;-><init>(Ljava/util/List;Lkotlin/jvm/functions/Function1;Lcom/example/accounting/ui/selling/home/SellingHomeViewModel;Landroidx/compose/runtime/MutableState;)V
 
-    move-object v9, v2
+    .line 411
+    const v1, -0x25b7f321
 
-    check-cast v9, Lkotlin/jvm/functions/Function1;
+    const/4 v3, 0x1
 
-    const/16 v11, 0x6006
+    invoke-static {v1, v3, v2}, Landroidx/compose/runtime/internal/ComposableLambdaKt;->composableLambdaInstance(IZLjava/lang/Object;)Landroidx/compose/runtime/internal/ComposableLambda;
 
-    const/16 v12, 0xee
+    move-result-object v2
 
-    const/4 v2, 0x0
+    check-cast v2, Lkotlin/jvm/functions/Function4;
+
+    const/4 v1, 0x0
+
+    :goto_row_loop
+    invoke-interface/range {v36 .. v36}, Ljava/util/List;->size()I
+
+    move-result v3
+
+    if-ge v1, v3, :goto_row_end
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    move-object/from16 v4, p2
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x0
-
     const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    const/4 v8, 0x0
+    move-result-object v6
 
-    move-object/from16 v10, p2
+    invoke-interface {v2, v3, v5, v4, v6}, Lkotlin/jvm/functions/Function4;->invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    invoke-static/range {v1 .. v12}, Landroidx/compose/foundation/lazy/LazyDslKt;->LazyColumn(Landroidx/compose/ui/Modifier;Landroidx/compose/foundation/lazy/LazyListState;Landroidx/compose/foundation/layout/PaddingValues;ZLandroidx/compose/foundation/layout/Arrangement$Vertical;Landroidx/compose/ui/Alignment$Horizontal;Landroidx/compose/foundation/gestures/FlingBehavior;ZLkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;II)V
+    sget-object v3, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
 
+    check-cast v3, Landroidx/compose/ui/Modifier;
+
+    const/4 v5, 0x4
+
+    int-to-float v5, v5
+
+    invoke-static {v5}, Landroidx/compose/ui/unit/Dp;->constructor-impl(F)F
+
+    move-result v5
+
+    invoke-static {v3, v5}, Landroidx/compose/foundation/layout/SizeKt;->height-3ABfNKs(Landroidx/compose/ui/Modifier;F)Landroidx/compose/ui/Modifier;
+
+    move-result-object v3
+
+    const/4 v5, 0x6
+
+    invoke-static {v3, v0, v5}, Landroidx/compose/foundation/layout/SpacerKt;->Spacer(Landroidx/compose/ui/Modifier;Landroidx/compose/runtime/Composer;I)V
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_row_loop
+
+    :goto_row_end
     invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
     .line 720

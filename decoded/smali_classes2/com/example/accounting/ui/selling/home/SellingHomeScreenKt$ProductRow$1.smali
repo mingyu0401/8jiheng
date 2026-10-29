@@ -1581,7 +1581,7 @@
 
     sget-object v1, Landroidx/compose/material/icons/Icons$Filled;->INSTANCE:Landroidx/compose/material/icons/Icons$Filled;
 
-    if-eqz v9, :icon_sold
+    if-nez v9, :icon_sold
 
     if-eqz v28, :cond_14
 
@@ -1604,7 +1604,7 @@
     move-result-object v1
 
     :goto_5
-    if-eqz v9, :label_sold
+    if-nez v9, :label_sold
 
     if-eqz v28, :cond_15
 
