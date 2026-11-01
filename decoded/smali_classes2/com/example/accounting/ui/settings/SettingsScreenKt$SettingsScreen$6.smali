@@ -1557,6 +1557,60 @@
     :cond_16
     invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
+    move-object/from16 v0, p2
+
+    const/16 v11, 0x0
+
+    invoke-static {v0, v11}, Lcom/example/accounting/ui/theme/ColorKt;->getTextSecondary(Landroidx/compose/runtime/Composer;I)J
+
+    move-result-wide v3
+
+    const/16 v1, 0xc
+
+    invoke-static {v1}, Landroidx/compose/ui/unit/TextUnitKt;->getSp(I)J
+
+    move-result-wide v5
+
+    const-string v1, "\u514d\u8d23\u58f0\u660e\uff1a\u4f7f\u7528\u672c\u8f6f\u4ef6\u5b58\u50a8\u7684\u4fe1\u606f\u4ee5\u53ca\u9020\u6210\u7684\u5f71\u54cd\u4e0e\u672c\u8f6f\u4ef6\u53ca\u5176\u4fee\u6539\u4eba\u65e0\u5173\u3002\u672c\u8f6f\u4ef6\u4e0d\u5efa\u8bae\u4e5f\u4e0d\u652f\u6301\u8fdd\u6cd5\u4fe1\u606f\u7684\u5f55\u5165\uff0c\u8bf7\u81ea\u89c9\u9075\u5b88\u76f8\u5173\u6cd5\u5f8b\u6cd5\u89c4\u3002"
+
+    const/4 v2, 0x0
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    const-wide/16 v10, 0x0
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
+
+    const-wide/16 v14, 0x0
+
+    const/16 v16, 0x0
+
+    const/16 v17, 0x0
+
+    const/16 v18, 0x0
+
+    const/16 v19, 0x0
+
+    const/16 v20, 0x0
+
+    const/16 v21, 0x0
+
+    const/16 v23, 0xc06
+
+    move-object/from16 v22, p2
+
+    const/16 v24, 0x0
+
+    const v25, 0x1fff2
+
+    invoke-static/range {v1 .. v25}, Landroidx/compose/material3/TextKt;->Text--4IGK_g(Ljava/lang/String;Landroidx/compose/ui/Modifier;JJLandroidx/compose/ui/text/font/FontStyle;Landroidx/compose/ui/text/font/FontWeight;Landroidx/compose/ui/text/font/FontFamily;JLandroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/text/style/TextAlign;JIZIILkotlin/jvm/functions/Function1;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/runtime/Composer;III)V
+
     .line 362
     invoke-static/range {p2 .. p2}, Landroidx/compose/runtime/ComposerKt;->sourceInformationMarkerEnd(Landroidx/compose/runtime/Composer;)V
 

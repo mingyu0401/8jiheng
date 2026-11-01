@@ -71,7 +71,7 @@
 
     iget-object v1, p0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$8$importLauncher$1;->$context:Landroid/content/Context;
 
-    invoke-virtual {v0, v1, p1}, Lcom/example/accounting/ui/selling/home/SellingHomeViewModel;->importSales(Landroid/content/Context;Landroid/net/Uri;)V
+    invoke-virtual {v0, v1, p1}, Lcom/example/accounting/ui/selling/home/SellingHomeViewModel;->importProducts(Landroid/content/Context;Landroid/net/Uri;)V
 
     :done
     return-void

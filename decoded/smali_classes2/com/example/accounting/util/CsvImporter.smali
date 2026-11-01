@@ -1383,7 +1383,7 @@
 
     move-result v1
 
-    if-eqz v1, :ps_null
+    if-nez v1, :ps_null
 
     const/4 v1, 0x0
 
@@ -1724,6 +1724,309 @@
     return-object v1
 
     :ps_null
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public final parseProducts(Ljava/lang/String;)Ljava/util/List;
+    .locals 17
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/lang/String;",
+            ")",
+            "Ljava/util/List<",
+            "Lcom/example/accounting/data/entity/Product;",
+            ">;"
+        }
+    .end annotation
+
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, p1
+
+    const-string v2, "\ufeff"
+
+    const-string v3, ""
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x4
+
+    const/4 v6, 0x0
+
+    invoke-static/range {v1 .. v6}, Lkotlin/text/StringsKt;->replace$default(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZILjava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Lcom/example/accounting/util/CsvImporter;->parseCsv(Ljava/lang/String;)Ljava/util/List;
+
+    move-result-object v1
+
+    if-eqz v1, :pp_null
+
+    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
+
+    move-result v2
+
+    if-nez v2, :pp_null
+
+    const/4 v2, 0x0
+
+    invoke-interface {v1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/util/List;
+
+    invoke-interface {v4}, Ljava/util/List;->size()I
+
+    move-result v5
+
+    const/4 v6, 0x3
+
+    if-ge v5, v6, :pp_null
+
+    invoke-interface {v4, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/lang/String;
+
+    check-cast v4, Ljava/lang/CharSequence;
+
+    invoke-static {v4}, Lkotlin/text/StringsKt;->trim(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    const-string v5, "\u7269\u54c1\u540d\u79f0"
+
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v4
+
+    if-eqz v4, :pp_null
+
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    const/4 v3, 0x1
+
+    :pp_loop
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    move-result v6
+
+    if-ge v3, v6, :pp_done
+
+    invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Ljava/util/List;
+
+    add-int/lit8 v3, v3, 0x1
+
+    :pp_pad
+    invoke-interface {v4}, Ljava/util/List;->size()I
+
+    move-result v5
+
+    const/16 v6, 0x8
+
+    if-ge v5, v6, :pp_pad_done
+
+    const-string v6, ""
+
+    invoke-interface {v4, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :pp_pad
+
+    :pp_pad_done
+    const/4 v7, 0x0
+
+    invoke-interface {v4, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v6
+
+    check-cast v6, Ljava/lang/String;
+
+    check-cast v6, Ljava/lang/CharSequence;
+
+    invoke-static {v6}, Lkotlin/text/StringsKt;->trim(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
+
+    move-result v7
+
+    if-eqz v7, :pp_loop
+
+    const/4 v7, 0x1
+
+    invoke-interface {v4, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Ljava/lang/String;
+
+    const/4 v8, 0x2
+
+    invoke-interface {v4, v8}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v8
+
+    check-cast v8, Ljava/lang/String;
+
+    check-cast v8, Ljava/lang/CharSequence;
+
+    invoke-static {v8}, Lkotlin/text/StringsKt;->trim(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v8}, Lkotlin/text/StringsKt;->toDoubleOrNull(Ljava/lang/String;)Ljava/lang/Double;
+
+    move-result-object v8
+
+    if-eqz v8, :pp_cost_def
+
+    invoke-virtual {v8}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v8
+
+    goto :pp_cost_ok
+
+    :pp_cost_def
+    const-wide/16 v8, 0x0
+
+    :pp_cost_ok
+    const/4 v10, 0x3
+
+    invoke-interface {v4, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v10
+
+    check-cast v10, Ljava/lang/String;
+
+    check-cast v10, Ljava/lang/CharSequence;
+
+    invoke-static {v10}, Lkotlin/text/StringsKt;->trim(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+
+    move-result-object v10
+
+    invoke-virtual {v10}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v10
+
+    invoke-static {v10}, Lkotlin/text/StringsKt;->toDoubleOrNull(Ljava/lang/String;)Ljava/lang/Double;
+
+    move-result-object v10
+
+    if-eqz v10, :pp_ship_def
+
+    invoke-virtual {v10}, Ljava/lang/Double;->doubleValue()D
+
+    move-result-wide v10
+
+    goto :pp_ship_ok
+
+    :pp_ship_def
+    const-wide/16 v10, 0x0
+
+    :pp_ship_ok
+    const/4 v12, 0x4
+
+    invoke-interface {v4, v12}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v12
+
+    check-cast v12, Ljava/lang/String;
+
+    const/4 v13, 0x5
+
+    invoke-interface {v4, v13}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v13
+
+    check-cast v13, Ljava/lang/String;
+
+    invoke-direct {v0, v13}, Lcom/example/accounting/util/CsvImporter;->parseTime(Ljava/lang/String;)Ljava/lang/Long;
+
+    move-result-object v13
+
+    if-eqz v13, :pp_time_def
+
+    invoke-virtual {v13}, Ljava/lang/Long;->longValue()J
+
+    move-result-wide v13
+
+    goto :pp_time_ok
+
+    :pp_time_def
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v13
+
+    :pp_time_ok
+    const/4 v15, 0x6
+
+    invoke-interface {v4, v15}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v15
+
+    check-cast v15, Ljava/lang/String;
+
+    check-cast v15, Ljava/lang/CharSequence;
+
+    invoke-static {v15}, Lkotlin/text/StringsKt;->trim(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+
+    move-result-object v15
+
+    invoke-virtual {v15}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v15
+
+    const-string v5, "\u662f"
+
+    invoke-static {v15, v5}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v15
+
+    const/4 v5, 0x7
+
+    invoke-interface {v4, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object v16
+
+    check-cast v16, Ljava/lang/String;
+
+    const-wide/16 v4, 0x0
+
+    invoke-direct/range {v4 .. v16}, Lcom/example/accounting/data/entity/Product;-><init>(JLjava/lang/String;Ljava/lang/String;DDLjava/lang/String;JZLjava/lang/String;)V
+
+    invoke-interface {v2, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :pp_loop
+
+    :pp_done
+    return-object v2
+
+    :pp_null
     const/4 v0, 0x0
 
     return-object v0

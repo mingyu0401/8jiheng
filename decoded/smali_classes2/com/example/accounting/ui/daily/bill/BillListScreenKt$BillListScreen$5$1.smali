@@ -321,6 +321,35 @@
 
     invoke-static/range {v0 .. v8}, Landroidx/compose/material3/IconButtonKt;->IconButton(Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;ZLandroidx/compose/material3/IconButtonColors;Landroidx/compose/foundation/interaction/MutableInteractionSource;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V
 
+    .line 147
+    new-instance v0, Lcom/example/accounting/ui/daily/bill/BillListScreenKt$BillListScreen$5$1$bulkDelete$1;
+
+    invoke-direct {v0}, Lcom/example/accounting/ui/daily/bill/BillListScreenKt$BillListScreen$5$1$bulkDelete$1;-><init>()V
+
+    check-cast v0, Lkotlin/jvm/functions/Function0;
+
+    new-instance v5, Lcom/example/accounting/ui/daily/bill/BillListScreenKt$BillListScreen$5$1$bulkDelete$2;
+
+    invoke-direct {v5}, Lcom/example/accounting/ui/daily/bill/BillListScreenKt$BillListScreen$5$1$bulkDelete$2;-><init>()V
+
+    check-cast v5, Lkotlin/jvm/functions/Function2;
+
+    const v7, 0x30006
+
+    const/16 v8, 0x1e
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    move-object v6, p2
+
+    invoke-static/range {v0 .. v8}, Landroidx/compose/material3/IconButtonKt;->IconButton(Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;ZLandroidx/compose/material3/IconButtonColors;Landroidx/compose/foundation/interaction/MutableInteractionSource;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V
+
     invoke-static {}, Landroidx/compose/runtime/ComposerKt;->isTraceInProgress()Z
 
     move-result v0

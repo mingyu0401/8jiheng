@@ -1,5 +1,8 @@
 .class public final Lcom/example/accounting/ui/daily/bill/BillListScreenKt;
 .super Ljava/lang/Object;
+
+# static fields
+.field public static volatile bulkDeleteHandler:Lkotlin/jvm/functions/Function0;
 .source "BillListScreen.kt"
 
 
@@ -249,6 +252,18 @@
     move-object/from16 v19, v1
 
     check-cast v19, Landroid/content/Context;
+
+    new-instance v1, Lcom/example/accounting/ui/daily/bill/BillListScreenKt$BillListScreen$bulkDelete$1;
+
+    move-object/from16 v2, v19
+
+    move-object/from16 v3, v16
+
+    move-object/from16 v4, v13
+
+    invoke-direct {v1, v2, v3, v4}, Lcom/example/accounting/ui/daily/bill/BillListScreenKt$BillListScreen$bulkDelete$1;-><init>(Landroid/content/Context;Landroidx/compose/runtime/State;Lcom/example/accounting/ui/daily/bill/BillListViewModel;)V
+
+    sput-object v1, Lcom/example/accounting/ui/daily/bill/BillListScreenKt;->bulkDeleteHandler:Lkotlin/jvm/functions/Function0;
 
     const v1, 0x60c2cc59
 

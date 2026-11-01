@@ -147,7 +147,7 @@
 
     const v25, 0x1ffde
 
-    const-string v1, "\u5356\u8d27\u5229\u6da6"
+    const-string v1, "\u5356\u8d27\u76c8\u4e8f"
 
     const/4 v2, 0x0
 

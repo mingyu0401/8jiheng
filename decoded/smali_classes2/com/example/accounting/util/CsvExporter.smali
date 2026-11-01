@@ -405,7 +405,7 @@
     .line 25
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "\u5546\u54c1\u540d\u79f0,\u6e20\u9053,\u6570\u91cf,\u8fdb\u8d27\u5355\u4ef7,\u7269\u6d41\u5355\u4ef7,\u603b\u6210\u672c,\u603b\u552e\u4ef7,\u5229\u6da6,\u5356\u51fa\u65f6\u95f4,\u5907\u6ce8\n"
+    const-string v1, "\u5546\u54c1\u540d\u79f0,\u6e20\u9053,\u6570\u91cf,\u8fdb\u8d27\u5355\u4ef7,\u7269\u6d41\u5355\u4ef7,\u603b\u6210\u672c,\u603b\u552e\u4ef7,\u76c8\u4e8f,\u5356\u51fa\u65f6\u95f4,\u5907\u6ce8\n"
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -617,6 +617,197 @@
     const-string v0, "toString(...)"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object p1
+.end method
+
+.method public final exportProducts(Ljava/util/List;)Ljava/lang/String;
+    .locals 8
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Ljava/util/List<",
+            "Lcom/example/accounting/data/entity/Product;",
+            ">;)",
+            "Ljava/lang/String;"
+        }
+    .end annotation
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "\u7269\u54c1\u540d\u79f0,\u6e20\u9053,\u6210\u672c\u4ef7,\u8fd0\u8d39,\u5907\u6ce8,\u521b\u5efa\u65f6\u95f4,\u5230\u8d27\u72b6\u6001,\u5206\u7c7b\n"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    check-cast p1, Ljava/lang/Iterable;
+
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p1
+
+    :goto_0
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/example/accounting/data/entity/Product;
+
+    sget-object v2, Lcom/example/accounting/util/CsvExporter;->INSTANCE:Lcom/example/accounting/util/CsvExporter;
+
+    const/16 v6, 0x2c
+
+    invoke-virtual {v1}, Lcom/example/accounting/data/entity/Product;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-direct {v2, v3}, Lcom/example/accounting/util/CsvExporter;->escape(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v1}, Lcom/example/accounting/data/entity/Product;->getSource()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-direct {v2, v7}, Lcom/example/accounting/util/CsvExporter;->escape(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v1}, Lcom/example/accounting/data/entity/Product;->getCostPrice()D
+
+    move-result-wide v4
+
+    invoke-direct {v2, v4, v5}, Lcom/example/accounting/util/CsvExporter;->fmt(D)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v1}, Lcom/example/accounting/data/entity/Product;->getShippingFee()D
+
+    move-result-wide v4
+
+    invoke-direct {v2, v4, v5}, Lcom/example/accounting/util/CsvExporter;->fmt(D)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v1}, Lcom/example/accounting/data/entity/Product;->getRemark()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-direct {v2, v7}, Lcom/example/accounting/util/CsvExporter;->escape(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    sget-object v7, Lcom/example/accounting/util/TimeUtils;->INSTANCE:Lcom/example/accounting/util/TimeUtils;
+
+    invoke-virtual {v1}, Lcom/example/accounting/data/entity/Product;->getCreatedAt()J
+
+    move-result-wide v4
+
+    invoke-virtual {v7, v4, v5}, Lcom/example/accounting/util/TimeUtils;->formatFull(J)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-direct {v2, v7}, Lcom/example/accounting/util/CsvExporter;->escape(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v1}, Lcom/example/accounting/data/entity/Product;->getArrived()Z
+
+    move-result v7
+
+    if-eqz v7, :arr_no
+
+    const-string v7, "\u662f"
+
+    goto :arr_yes
+
+    :arr_no
+    const-string v7, "\u5426"
+
+    :arr_yes
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v1}, Lcom/example/accounting/data/entity/Product;->getCategory()Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-direct {v2, v7}, Lcom/example/accounting/util/CsvExporter;->escape(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v7
+
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const/16 v7, 0xa
+
+    invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    goto :goto_0
+
+    :cond_0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p1
 
     return-object p1
 .end method

@@ -79,6 +79,8 @@
 
 # static fields
 .field private static final PRODUCT_CATEGORIES:Ljava/util/List;
+
+.field public static batchQueue:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -2831,6 +2833,74 @@
     .line 1
     invoke-static {p0, p1}, Lcom/example/accounting/ui/selling/SellingDialogsKt;->ProductDetailDialog$lambda$36(Landroidx/compose/runtime/MutableState;Ljava/lang/String;)V
 
+    return-void
+.end method
+
+.method public static final drainBatchQueue(Lcom/example/accounting/ui/selling/home/SellingHomeViewModel;Ljava/lang/String;Z)V
+    .locals 12
+
+    sget-object v0, Lcom/example/accounting/ui/selling/SellingDialogsKt;->batchQueue:Ljava/util/ArrayList;
+
+    if-eqz v0, :done
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+
+    move-result v1
+
+    if-eqz v1, :done
+
+    const/4 v1, 0x0
+
+    sput-object v1, Lcom/example/accounting/ui/selling/SellingDialogsKt;->batchQueue:Ljava/util/ArrayList;
+
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v0
+
+    :loop
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :done
+
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/example/accounting/ui/selling/QuickPurchaseParser$Parsed;
+
+    move-object/from16 v2, p0
+
+    invoke-virtual {v1}, Lcom/example/accounting/ui/selling/QuickPurchaseParser$Parsed;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v1}, Lcom/example/accounting/ui/selling/QuickPurchaseParser$Parsed;->getSource()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v1}, Lcom/example/accounting/ui/selling/QuickPurchaseParser$Parsed;->getCost()D
+
+    move-result-wide v5
+
+    invoke-virtual {v1}, Lcom/example/accounting/ui/selling/QuickPurchaseParser$Parsed;->getTime()J
+
+    move-result-wide v7
+
+    invoke-virtual {v1}, Lcom/example/accounting/ui/selling/QuickPurchaseParser$Parsed;->getRemark()Ljava/lang/String;
+
+    move-result-object v9
+
+    move-object/from16 v10, p1
+
+    move/from16 v11, p2
+
+    invoke-virtual/range {v2 .. v11}, Lcom/example/accounting/ui/selling/home/SellingHomeViewModel;->savePurchase(Ljava/lang/String;Ljava/lang/String;DJLjava/lang/String;Ljava/lang/String;Z)V
+
+    goto :loop
+
+    :done
     return-void
 .end method
 

@@ -4865,7 +4865,7 @@
 
     aput-object v6, v5, v7
 
-    const-string v6, "\u5356\u8d27\u5229\u6da6"
+    const-string v6, "\u5356\u8d27\u76c8\u4e8f"
 
     const/4 v7, 0x1
 
@@ -5975,7 +5975,7 @@
 
     move-result-object v4
 
-    const-string v5, "\u603b\u5229\u6da6"
+    const-string v5, "\u603b\u76c8\u4e8f"
 
     invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

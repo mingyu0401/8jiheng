@@ -88,6 +88,10 @@
 
 .field public static volatile soldIdsState:Landroidx/compose/runtime/MutableState;
 
+.field public static volatile viewModelRef:Lcom/example/accounting/ui/selling/home/SellingHomeViewModel;
+
+.field public static volatile bulkDeleteProductsHandler:Lkotlin/jvm/functions/Function0;
+
 
 # direct methods
 .method static constructor <clinit>()V
@@ -3236,6 +3240,8 @@
 
     move-object/from16 v14, p0
 
+    sput-object v14, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt;->viewModelRef:Lcom/example/accounting/ui/selling/home/SellingHomeViewModel;
+
     move-object/from16 v15, p2
 
     move-object/from16 v13, p3
@@ -3639,7 +3645,11 @@
     move-result-object v21
 
     .line 124
-    sget-object v1, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    sget-object v1, Lcom/example/accounting/ui/selling/home/SellingHomeViewModel;->pendingOpenCreateState:Landroidx/compose/runtime/MutableState;
+
+    invoke-interface {v1}, Landroidx/compose/runtime/MutableState;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
 
     new-instance v2, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$1;
 
@@ -4176,9 +4186,9 @@
     const/16 v22, 0x20
 
     .line 161
-    const-string v1, "\u5bfc\u51fa\u672c\u6708\u5356\u51fa"
+    const-string v1, "\u5bfc\u51fa\u5168\u90e8\u5546\u54c1"
 
-    const-string v2, "\u5c06\u5bfc\u51fa\u672c\u6708\u5356\u51fa\u8bb0\u5f55\u4e3a CSV \u6587\u4ef6,\u4fdd\u5b58\u5230 Downloads/Accounting/,\u786e\u5b9a\u5bfc\u51fa?"
+    const-string v2, "\u5c06\u5bfc\u51fa\u5168\u90e8\u5546\u54c1\u4e3a CSV \u6587\u4ef6,\u4fdd\u5b58\u5230 Downloads/Accounting/,\u786e\u5b9a\u5bfc\u51fa?"
 
     const-string v5, "\u5bfc\u51fa"
 
@@ -4921,6 +4931,57 @@
     move-result-object p0
 
     return-object p0
+.end method
+
+.method public static final profitRateText(Lcom/example/accounting/ui/selling/home/SellingHomeState;)Ljava/lang/String;
+    .locals 5
+
+    invoke-virtual {p0}, Lcom/example/accounting/ui/selling/home/SellingHomeState;->getMonthCost()D
+
+    move-result-wide v0
+
+    const-wide/16 v2, 0x0
+
+    cmpl-double v4, v0, v2
+
+    if-lez v4, :cond_empty
+
+    invoke-virtual {p0}, Lcom/example/accounting/ui/selling/home/SellingHomeState;->getMonthProfit()D
+
+    move-result-wide v2
+
+    div-double/2addr v2, v0
+
+    const-wide/high16 v0, 0x4059000000000000L
+
+    mul-double/2addr v2, v0
+
+    invoke-static {v2, v3}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    move-result-object v2
+
+    const/4 v0, 0x1
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    const/4 v1, 0x0
+
+    aput-object v2, v0, v1
+
+    sget-object v1, Ljava/util/Locale;->CHINA:Ljava/util/Locale;
+
+    const-string v2, " \u00b7 %.1f%%"
+
+    invoke-static {v1, v2, v0}, Ljava/lang/String;->format(Ljava/util/Locale;Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_empty
+    const-string v0, ""
+
+    return-object v0
 .end method
 
 .method public static final synthetic access$SellingHomeScreen$lambda$11(Landroidx/compose/runtime/MutableState;)Ljava/lang/String;

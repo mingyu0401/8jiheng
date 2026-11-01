@@ -198,7 +198,7 @@
 
     const/4 v7, 0x4
 
-    const-string v0, "\u5229\u6da6\u8d8b\u52bf"
+    const-string v0, "\u76c8\u4e8f\u8d8b\u52bf"
 
     const/4 v3, 0x0
 
@@ -254,7 +254,7 @@
 
     check-cast v4, Lkotlin/jvm/functions/Function3;
 
-    const-string v0, "\u5546\u54c1\u5229\u6da6\u6392\u884c"
+    const-string v0, "\u5546\u54c1\u76c8\u4e8f\u6392\u884c"
 
     const/4 v3, 0x0
 

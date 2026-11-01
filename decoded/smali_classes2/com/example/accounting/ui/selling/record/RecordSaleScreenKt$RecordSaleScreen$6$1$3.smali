@@ -931,7 +931,7 @@
 
     const v24, 0x1fff0
 
-    const-string v0, "\u672c\u7b14\u5229\u6da6"
+    const-string v0, "\u672c\u7b14\u76c8\u4e8f"
 
     const/4 v6, 0x0
 

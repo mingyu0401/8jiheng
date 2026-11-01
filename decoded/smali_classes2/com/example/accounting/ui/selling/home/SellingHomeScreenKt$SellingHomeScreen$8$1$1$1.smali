@@ -595,7 +595,7 @@
 
     const v24, 0x1fff2
 
-    const-string v17, "\u603b\u5229\u6da6"
+    const-string v17, "\u603b\u76c8\u4e8f"
 
     move-object/from16 v25, v0
 
@@ -911,7 +911,7 @@
 
     new-instance v1, Ljava/lang/StringBuilder;
 
-    const-string v2, "\u672c\u6708\u5356\u51fa "
+    const-string v2, "\u7d2f\u8ba1\u5356\u51fa "
 
     invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -1056,6 +1056,14 @@
     move-result-wide v4
 
     invoke-virtual {v0, v4, v5}, Lcom/example/accounting/util/MoneyFormatter;->format(D)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v1}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt;->profitRateText(Lcom/example/accounting/ui/selling/home/SellingHomeState;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -1403,7 +1411,7 @@
 
     move-result-object v0
 
-    const-string v3, "\u4eca\u65e5\u5229\u6da6"
+    const-string v3, "\u4eca\u65e5\u76c8\u4e8f"
 
     invoke-static {v3, v0, v1, v2}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt;->access$HeaderMiniItem(Ljava/lang/String;Ljava/lang/String;Landroidx/compose/runtime/Composer;I)V
 

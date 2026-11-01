@@ -71,10 +71,18 @@
 .end method
 
 .method public final setPendingOpenCreate(Z)V
-    .locals 0
+    .locals 2
 
     .line 28
     invoke-static {p1}, Lcom/example/accounting/ui/selling/home/SellingHomeViewModel;->access$setPendingOpenCreate$cp(Z)V
+
+    sget-object v0, Lcom/example/accounting/ui/selling/home/SellingHomeViewModel;->pendingOpenCreateState:Landroidx/compose/runtime/MutableState;
+
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Landroidx/compose/runtime/MutableState;->setValue(Ljava/lang/Object;)V
 
     return-void
 .end method

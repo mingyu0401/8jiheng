@@ -122,7 +122,7 @@
 .end method
 
 .method public final invoke(Ljava/lang/String;Ljava/lang/String;DJLjava/lang/String;Ljava/lang/String;Z)V
-    .locals 11
+    .locals 12
 
     const-string v0, "p0"
 
@@ -162,6 +162,12 @@
     move/from16 v10, p9
 
     invoke-virtual/range {v1 .. v10}, Lcom/example/accounting/ui/selling/home/SellingHomeViewModel;->savePurchase(Ljava/lang/String;Ljava/lang/String;DJLjava/lang/String;Ljava/lang/String;Z)V
+
+    move-object/from16 v2, p8
+
+    move/from16 v3, p9
+
+    invoke-static {v1, v2, v3}, Lcom/example/accounting/ui/selling/SellingDialogsKt;->drainBatchQueue(Lcom/example/accounting/ui/selling/home/SellingHomeViewModel;Ljava/lang/String;Z)V
 
     return-void
 .end method

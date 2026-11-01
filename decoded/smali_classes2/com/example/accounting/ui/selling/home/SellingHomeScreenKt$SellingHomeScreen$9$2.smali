@@ -73,7 +73,11 @@
 .end method
 
 .method public final invoke()V
-    .locals 1
+    .locals 2
+
+    const/4 v1, 0x0
+
+    sput-object v1, Lcom/example/accounting/ui/selling/SellingDialogsKt;->batchQueue:Ljava/util/ArrayList;
 
     .line 497
     iget-object v0, p0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$9$2;->receiver:Ljava/lang/Object;

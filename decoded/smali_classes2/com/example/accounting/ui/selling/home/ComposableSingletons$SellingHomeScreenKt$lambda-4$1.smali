@@ -145,7 +145,7 @@
 
     const/16 v7, 0xc
 
-    const-string v1, "\u5bfc\u51fa\u672c\u6708"
+    const-string v1, "\u5bfc\u51fa\u5168\u90e8"
 
     const/4 v2, 0x0
 

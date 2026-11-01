@@ -972,7 +972,7 @@
 
     const/16 v17, 0x0
 
-    const-string v22, "\u5229\u6da6"
+    const-string v22, "\u76c8\u4e8f"
 
     move-object/from16 v1, v22
 

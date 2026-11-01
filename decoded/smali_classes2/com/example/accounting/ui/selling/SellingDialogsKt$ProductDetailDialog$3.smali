@@ -1493,6 +1493,46 @@
 
     invoke-static/range {v1 .. v25}, Landroidx/compose/material3/TextKt;->Text--4IGK_g(Ljava/lang/String;Landroidx/compose/ui/Modifier;JJLandroidx/compose/ui/text/font/FontStyle;Landroidx/compose/ui/text/font/FontWeight;Landroidx/compose/ui/text/font/FontFamily;JLandroidx/compose/ui/text/style/TextDecoration;Landroidx/compose/ui/text/style/TextAlign;JIZIILkotlin/jvm/functions/Function1;Landroidx/compose/ui/text/TextStyle;Landroidx/compose/runtime/Composer;III)V
 
+    invoke-static {}, Landroidx/compose/ui/platform/AndroidCompositionLocals_androidKt;->getLocalContext()Landroidx/compose/runtime/ProvidableCompositionLocal;
+
+    move-result-object v1
+
+    check-cast v1, Landroidx/compose/runtime/CompositionLocal;
+
+    invoke-interface {v0, v1}, Landroidx/compose/runtime/Composer;->consume(Landroidx/compose/runtime/CompositionLocal;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/content/Context;
+
+    move-object/from16 v6, v34
+
+    new-instance v5, Lcom/example/accounting/ui/selling/SellingDialogsKt$ProductDetailDialog$3$CostClick$1;
+
+    invoke-direct {v5, v1, v6}, Lcom/example/accounting/ui/selling/SellingDialogsKt$ProductDetailDialog$3$CostClick$1;-><init>(Landroid/content/Context;Lcom/example/accounting/data/entity/Product;)V
+
+    check-cast v5, Lkotlin/jvm/functions/Function0;
+
+    sget-object v1, Landroidx/compose/ui/Modifier;->Companion:Landroidx/compose/ui/Modifier$Companion;
+
+    check-cast v1, Landroidx/compose/ui/Modifier;
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/16 v6, 0x7
+
+    const/4 v7, 0x0
+
+    invoke-static/range {v1 .. v7}, Landroidx/compose/foundation/ClickableKt;->clickable-XHw0xAI$default(Landroidx/compose/ui/Modifier;ZLjava/lang/String;Landroidx/compose/ui/semantics/Role;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Landroidx/compose/ui/Modifier;
+
+    move-result-object v1
+
+    move-object/from16 v66, v1
+
     .line 373
     sget-object v1, Lcom/example/accounting/util/MoneyFormatter;->INSTANCE:Lcom/example/accounting/util/MoneyFormatter;
 
@@ -1534,6 +1574,12 @@
 
     move-result-object v1
 
+    const-string v2, " \u00b7 \u70b9\u51fb\u4fee\u6539"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v1
+
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -1557,9 +1603,9 @@
 
     move-result-object v8
 
-    const v25, 0x1ffd2
+    const v25, 0x1ffd0
 
-    const/4 v2, 0x0
+    move-object/from16 v2, v66
 
     const/4 v7, 0x0
 

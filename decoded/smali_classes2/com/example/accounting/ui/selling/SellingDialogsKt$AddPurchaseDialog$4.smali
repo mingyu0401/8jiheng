@@ -1248,7 +1248,7 @@
 
     const/16 v27, 0x0
 
-    const v28, 0x5c7c78
+    const v28, 0x507c78
 
     const/4 v4, 0x0
 
@@ -1284,11 +1284,11 @@
 
     move-object v15, v3
 
-    const/16 v18, 0x1
+    const/16 v18, 0x0
 
-    const/16 v19, 0x0
+    const/16 v19, 0x3
 
-    const/16 v20, 0x0
+    const/16 v20, 0x1
 
     const/16 v21, 0x0
 
@@ -1384,6 +1384,60 @@
 
     :goto_4
     invoke-interface/range {p1 .. p1}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
+
+    new-instance v1, Lcom/example/accounting/ui/selling/SellingDialogsKt$AddPurchaseDialog$batchImport$1;
+
+    move-object/from16 v0, p0
+
+    iget-object v2, v0, Lcom/example/accounting/ui/selling/SellingDialogsKt$AddPurchaseDialog$4;->$name$delegate:Landroidx/compose/runtime/MutableState;
+
+    iget-object v3, v0, Lcom/example/accounting/ui/selling/SellingDialogsKt$AddPurchaseDialog$4;->$customChannel$delegate:Landroidx/compose/runtime/MutableState;
+
+    iget-object v4, v0, Lcom/example/accounting/ui/selling/SellingDialogsKt$AddPurchaseDialog$4;->$source$delegate:Landroidx/compose/runtime/MutableState;
+
+    iget-object v5, v0, Lcom/example/accounting/ui/selling/SellingDialogsKt$AddPurchaseDialog$4;->$costText$delegate:Landroidx/compose/runtime/MutableState;
+
+    iget-object v6, v0, Lcom/example/accounting/ui/selling/SellingDialogsKt$AddPurchaseDialog$4;->$time$delegate:Landroidx/compose/runtime/MutableState;
+
+    iget-object v7, v0, Lcom/example/accounting/ui/selling/SellingDialogsKt$AddPurchaseDialog$4;->$remark$delegate:Landroidx/compose/runtime/MutableState;
+
+    iget-object v8, v0, Lcom/example/accounting/ui/selling/SellingDialogsKt$AddPurchaseDialog$4;->$quickInput$delegate:Landroidx/compose/runtime/MutableState;
+
+    iget-object v9, v0, Lcom/example/accounting/ui/selling/SellingDialogsKt$AddPurchaseDialog$4;->$quickHint$delegate:Landroidx/compose/runtime/MutableState;
+
+    invoke-direct/range {v1 .. v9}, Lcom/example/accounting/ui/selling/SellingDialogsKt$AddPurchaseDialog$batchImport$1;-><init>(Landroidx/compose/runtime/MutableState;Landroidx/compose/runtime/MutableState;Landroidx/compose/runtime/MutableState;Landroidx/compose/runtime/MutableState;Landroidx/compose/runtime/MutableState;Landroidx/compose/runtime/MutableState;Landroidx/compose/runtime/MutableState;Landroidx/compose/runtime/MutableState;)V
+
+    check-cast v1, Lkotlin/jvm/functions/Function0;
+
+    new-instance v10, Lcom/example/accounting/ui/selling/SellingDialogsKt$AddPurchaseDialog$batchImportLabel$1;
+
+    invoke-direct {v10}, Lcom/example/accounting/ui/selling/SellingDialogsKt$AddPurchaseDialog$batchImportLabel$1;-><init>()V
+
+    check-cast v10, Lkotlin/jvm/functions/Function3;
+
+    const/high16 v12, 0x30000000
+
+    const/16 v13, 0x1fe
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    move-object/from16 v11, p1
+
+    invoke-static/range {v1 .. v13}, Landroidx/compose/material3/ButtonKt;->TextButton(Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;ZLandroidx/compose/ui/graphics/Shape;Landroidx/compose/material3/ButtonColors;Landroidx/compose/material3/ButtonElevation;Landroidx/compose/foundation/BorderStroke;Landroidx/compose/foundation/layout/PaddingValues;Landroidx/compose/foundation/interaction/MutableInteractionSource;Lkotlin/jvm/functions/Function3;Landroidx/compose/runtime/Composer;II)V
 
     .line 164
     invoke-static/range {v44 .. v44}, Lcom/example/accounting/ui/selling/SellingDialogsKt;->access$AddPurchaseDialog$lambda$1(Landroidx/compose/runtime/MutableState;)Ljava/lang/String;

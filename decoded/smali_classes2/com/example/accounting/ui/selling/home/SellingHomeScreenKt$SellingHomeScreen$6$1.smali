@@ -153,7 +153,7 @@
 .end method
 
 .method public final invoke(Landroidx/compose/foundation/layout/RowScope;Landroidx/compose/runtime/Composer;I)V
-    .locals 9
+    .locals 12
 
     const-string v1, "$this$TopAppBar"
 
@@ -198,6 +198,56 @@
     invoke-static {v3, p3, v1, v2}, Landroidx/compose/runtime/ComposerKt;->traceEventStart(IIILjava/lang/String;)V
 
     :cond_2
+    invoke-static {}, Landroidx/compose/ui/platform/AndroidCompositionLocals_androidKt;->getLocalContext()Landroidx/compose/runtime/ProvidableCompositionLocal;
+
+    move-result-object v1
+
+    check-cast v1, Landroidx/compose/runtime/CompositionLocal;
+
+    move-object v0, p2
+
+    const v2, 0x789c5f52
+
+    const-string v3, "CC:CompositionLocal.kt#9igjgp"
+
+    invoke-static {v0, v2, v3}, Landroidx/compose/runtime/ComposerKt;->sourceInformationMarkerStart(Landroidx/compose/runtime/Composer;ILjava/lang/String;)V
+
+    invoke-interface {v0, v1}, Landroidx/compose/runtime/Composer;->consume(Landroidx/compose/runtime/CompositionLocal;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    invoke-static {v0}, Landroidx/compose/runtime/ComposerKt;->sourceInformationMarkerEnd(Landroidx/compose/runtime/Composer;)V
+
+    check-cast v1, Landroid/content/Context;
+
+    new-instance v2, Landroidx/activity/result/contract/ActivityResultContracts$OpenDocument;
+
+    invoke-direct {v2}, Landroidx/activity/result/contract/ActivityResultContracts$OpenDocument;-><init>()V
+
+    check-cast v2, Landroidx/activity/result/contract/ActivityResultContract;
+
+    new-instance v3, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$8$importLauncher$1;
+
+    sget-object v4, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt;->viewModelRef:Lcom/example/accounting/ui/selling/home/SellingHomeViewModel;
+
+    invoke-direct {v3, v4, v1}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$8$importLauncher$1;-><init>(Lcom/example/accounting/ui/selling/home/SellingHomeViewModel;Landroid/content/Context;)V
+
+    check-cast v3, Lkotlin/jvm/functions/Function1;
+
+    const/4 v4, 0x0
+
+    invoke-static {v2, v3, v0, v4}, Landroidx/activity/compose/ActivityResultRegistryKt;->rememberLauncherForActivityResult(Landroidx/activity/result/contract/ActivityResultContract;Lkotlin/jvm/functions/Function1;Landroidx/compose/runtime/Composer;I)Landroidx/activity/compose/ManagedActivityResultLauncher;
+
+    move-result-object v2
+
+    move-object v9, v2
+
+    new-instance v3, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$8$importClick$1;
+
+    invoke-direct {v3, v2}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$8$importClick$1;-><init>(Landroidx/activity/compose/ManagedActivityResultLauncher;)V
+
+    check-cast v3, Lkotlin/jvm/functions/Function0;
+
     new-instance v0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6$1$logistics$1;
 
     iget-object v1, p0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6$1;->$onOpenShipping:Lkotlin/jvm/functions/Function1;
@@ -309,6 +359,35 @@
     invoke-virtual {v1}, Lcom/example/accounting/ui/selling/home/ComposableSingletons$SellingHomeScreenKt;->getLambda-4$app_release()Lkotlin/jvm/functions/Function2;
 
     move-result-object v5
+
+    const v7, 0x30006
+
+    const/16 v8, 0x1e
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    move-object v6, p2
+
+    invoke-static/range {v0 .. v8}, Landroidx/compose/material3/IconButtonKt;->IconButton(Lkotlin/jvm/functions/Function0;Landroidx/compose/ui/Modifier;ZLandroidx/compose/material3/IconButtonColors;Landroidx/compose/foundation/interaction/MutableInteractionSource;Lkotlin/jvm/functions/Function2;Landroidx/compose/runtime/Composer;II)V
+
+    .line 183
+    new-instance v0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$8$importClick$1;
+
+    invoke-direct {v0, v9}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$8$importClick$1;-><init>(Landroidx/activity/compose/ManagedActivityResultLauncher;)V
+
+    check-cast v0, Lkotlin/jvm/functions/Function0;
+
+    new-instance v5, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6$1$importIcon$1;
+
+    invoke-direct {v5}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$6$1$importIcon$1;-><init>()V
+
+    check-cast v5, Lkotlin/jvm/functions/Function2;
 
     const v7, 0x30006
 

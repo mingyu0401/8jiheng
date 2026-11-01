@@ -204,30 +204,11 @@
 
     .line 209
     :try_start_1
-    sget-object p1, Lcom/example/accounting/util/TimeUtils;->INSTANCE:Lcom/example/accounting/util/TimeUtils;
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v4
-
-    invoke-virtual {p1, v4, v5}, Lcom/example/accounting/util/TimeUtils;->monthRange(J)Lkotlin/ranges/LongRange;
-
-    move-result-object p1
-
-    .line 210
     iget-object v2, p0, Lcom/example/accounting/ui/selling/home/SellingHomeViewModel$exportMonthly$1;->this$0:Lcom/example/accounting/ui/selling/home/SellingHomeViewModel;
 
     invoke-static {v2}, Lcom/example/accounting/ui/selling/home/SellingHomeViewModel;->access$getRepo$p(Lcom/example/accounting/ui/selling/home/SellingHomeViewModel;)Lcom/example/accounting/data/repository/SellingRepository;
 
     move-result-object v4
-
-    invoke-virtual {p1}, Lkotlin/ranges/LongRange;->getFirst()J
-
-    move-result-wide v5
-
-    invoke-virtual {p1}, Lkotlin/ranges/LongRange;->getLast()J
-
-    move-result-wide v7
 
     move-object v9, p0
 
@@ -235,7 +216,7 @@
 
     iput v3, p0, Lcom/example/accounting/ui/selling/home/SellingHomeViewModel$exportMonthly$1;->label:I
 
-    invoke-virtual/range {v4 .. v9}, Lcom/example/accounting/data/repository/SellingRepository;->getSalesByRange(JJLkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    invoke-virtual {v4, v9}, Lcom/example/accounting/data/repository/SellingRepository;->getAllProducts(Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -262,7 +243,7 @@
 
     move-result-object p1
 
-    const-string v0, "\u672c\u6708\u65e0\u5356\u51fa\u8bb0\u5f55\u53ef\u5bfc\u51fa"
+    const-string v0, "\u6ca1\u6709\u5546\u54c1\u53ef\u5bfc\u51fa"
 
     invoke-interface {p1, v0}, Lkotlinx/coroutines/flow/MutableStateFlow;->setValue(Ljava/lang/Object;)V
 
@@ -275,7 +256,7 @@
     :cond_3
     sget-object v1, Lcom/example/accounting/util/CsvExporter;->INSTANCE:Lcom/example/accounting/util/CsvExporter;
 
-    invoke-virtual {v1, p1}, Lcom/example/accounting/util/CsvExporter;->exportSales(Ljava/util/List;)Ljava/lang/String;
+    invoke-virtual {v1, p1}, Lcom/example/accounting/util/CsvExporter;->exportProducts(Ljava/util/List;)Ljava/lang/String;
 
     move-result-object p1
 

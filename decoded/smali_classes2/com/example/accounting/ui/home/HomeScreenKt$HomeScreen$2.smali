@@ -1698,9 +1698,9 @@
     const/16 v24, 0x0
 
     .line 223
-    const-string v2, "\u5356\u8d27\u5229\u6da6"
+    const-string v2, "\u5356\u8d27\u76c8\u4e8f"
 
-    const-string v3, "\u603b\u5229\u6da6"
+    const-string v3, "\u603b\u76c8\u4e8f"
 
     move-wide/from16 v7, v16
 

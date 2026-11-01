@@ -986,6 +986,20 @@
 
     invoke-interface/range {p2 .. p2}, Landroidx/compose/runtime/Composer;->endReplaceableGroup()V
 
+    new-instance v1, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$ProductLongPressFilter;
+
+    invoke-direct {v1}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$ProductLongPressFilter;-><init>()V
+
+    check-cast v1, Lkotlin/jvm/functions/Function1;
+
+    const/16 v23, 0x0
+
+    move-object/from16 v24, v1
+
+    invoke-static/range {v22 .. v24}, Landroidx/compose/ui/input/pointer/PointerInteropFilter_androidKt;->pointerInteropFilter(Landroidx/compose/ui/Modifier;Landroidx/compose/ui/input/pointer/RequestDisallowInterceptTouchEvent;Lkotlin/jvm/functions/Function1;)Landroidx/compose/ui/Modifier;
+
+    move-result-object v22
+
     const/16 v27, 0x7
 
     const/16 v28, 0x0
