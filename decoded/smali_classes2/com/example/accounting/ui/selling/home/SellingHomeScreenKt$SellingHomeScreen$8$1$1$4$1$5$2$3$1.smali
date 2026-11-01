@@ -96,14 +96,14 @@
 .end method
 
 .method public final invoke()V
-    .locals 2
+    .locals 1
 
-    .line 422
-    iget-object v0, p0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$8$1$1$4$1$5$2$3$1;->$deleteTarget$delegate:Landroidx/compose/runtime/MutableState;
+    sget-object v0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt;->bulkDeleteProductsHandler:Lkotlin/jvm/functions/Function0;
 
-    iget-object v1, p0, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt$SellingHomeScreen$8$1$1$4$1$5$2$3$1;->$p:Lcom/example/accounting/data/entity/Product;
+    if-nez v0, :cond_0
 
-    invoke-static {v0, v1}, Lcom/example/accounting/ui/selling/home/SellingHomeScreenKt;->access$SellingHomeScreen$lambda$6(Landroidx/compose/runtime/MutableState;Lcom/example/accounting/data/entity/Product;)V
+    invoke-interface {v0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
+    :cond_0
     return-void
 .end method

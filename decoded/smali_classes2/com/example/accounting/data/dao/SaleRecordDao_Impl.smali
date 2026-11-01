@@ -439,7 +439,7 @@
     .end annotation
 
     .line 723
-    const-string v0, "SELECT IFNULL(SUM(profit), 0) FROM sale_records WHERE saleTime >= ?"
+    const-string v0, "SELECT IFNULL(SUM(s.salePrice - (p.costPrice + p.shippingFee) * s.quantity), 0) FROM sale_records s JOIN products p ON p.id = s.productId WHERE s.saleTime >= ?"
 
     const/4 v1, 0x1
 
@@ -697,7 +697,7 @@
     .end annotation
 
     .line 652
-    const-string v0, "SELECT IFNULL(SUM((costPrice + shippingFee) * quantity), 0) FROM sale_records WHERE saleTime BETWEEN ? AND ?"
+    const-string v0, "SELECT IFNULL(SUM((p.costPrice + p.shippingFee) * s.quantity), 0) FROM sale_records s JOIN products p ON p.id = s.productId WHERE s.saleTime BETWEEN ? AND ?"
 
     const/4 v1, 0x2
 
@@ -716,13 +716,23 @@
     .line 657
     iget-object p1, p0, Lcom/example/accounting/data/dao/SaleRecordDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
+    const/4 v2, 0x2
+
     new-array p2, v2, [Ljava/lang/String;
 
-    const-string p3, "sale_records"
+    const-string v1, "sale_records"
+
+    const/4 p3, 0x0
+
+    aput-object v1, p2, p3
+
+    const-string v1, "products"
+
+    const/4 p3, 0x1
+
+    aput-object v1, p2, p3
 
     const/4 p4, 0x0
-
-    aput-object p3, p2, p4
 
     new-instance p3, Lcom/example/accounting/data/dao/SaleRecordDao_Impl$15;
 
@@ -758,9 +768,9 @@
     .end annotation
 
     .line 617
-    const-string v0, "SELECT IFNULL(SUM(profit), 0) FROM sale_records WHERE saleTime BETWEEN ? AND ?"
+    const-string v0, "SELECT IFNULL(SUM(s.salePrice - (p.costPrice + p.shippingFee) * s.quantity), 0) - IFNULL((SELECT SUM(t.totalFee) FROM shipments t WHERE t.createdAt BETWEEN ? AND ?), 0) FROM sale_records s JOIN products p ON p.id = s.productId WHERE s.saleTime BETWEEN ? AND ?"
 
-    const/4 v1, 0x2
+    const/4 v1, 0x4
 
     invoke-static {v0, v1}, Landroidx/room/RoomSQLiteQuery;->acquire(Ljava/lang/String;I)Landroidx/room/RoomSQLiteQuery;
 
@@ -771,19 +781,44 @@
     .line 619
     invoke-virtual {v0, v2, p1, p2}, Landroidx/room/RoomSQLiteQuery;->bindLong(IJ)V
 
-    .line 621
-    invoke-virtual {v0, v1, p3, p4}, Landroidx/room/RoomSQLiteQuery;->bindLong(IJ)V
+    const/4 v2, 0x2
+
+    invoke-virtual {v0, v2, p3, p4}, Landroidx/room/RoomSQLiteQuery;->bindLong(IJ)V
+
+    const/4 v2, 0x3
+
+    invoke-virtual {v0, v2, p1, p2}, Landroidx/room/RoomSQLiteQuery;->bindLong(IJ)V
+
+    const/4 v2, 0x4
+
+    invoke-virtual {v0, v2, p3, p4}, Landroidx/room/RoomSQLiteQuery;->bindLong(IJ)V
 
     .line 622
     iget-object p1, p0, Lcom/example/accounting/data/dao/SaleRecordDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
+    const/4 v2, 0x3
+
     new-array p2, v2, [Ljava/lang/String;
 
-    const-string p3, "sale_records"
+    const-string v1, "sale_records"
+
+    const/4 p3, 0x0
+
+    aput-object v1, p2, p3
+
+    const-string v1, "products"
+
+    const/4 p3, 0x1
+
+    aput-object v1, p2, p3
+
+    const-string v1, "shipments"
+
+    const/4 p3, 0x2
+
+    aput-object v1, p2, p3
 
     const/4 p4, 0x0
-
-    aput-object p3, p2, p4
 
     new-instance p3, Lcom/example/accounting/data/dao/SaleRecordDao_Impl$14;
 

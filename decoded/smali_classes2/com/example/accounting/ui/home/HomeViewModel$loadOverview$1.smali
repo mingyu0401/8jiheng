@@ -215,15 +215,9 @@
 
     move-result-object v2
 
-    iget-object v4, v0, Lcom/example/accounting/ui/home/HomeViewModel$loadOverview$1;->$monthRange:Lkotlin/ranges/LongRange;
+    const-wide/16 v4, 0x0
 
-    invoke-virtual {v4}, Lkotlin/ranges/LongRange;->getFirst()J
-
-    move-result-wide v4
-
-    iget-object v6, v0, Lcom/example/accounting/ui/home/HomeViewModel$loadOverview$1;->$monthRange:Lkotlin/ranges/LongRange;
-
-    invoke-virtual {v6}, Lkotlin/ranges/LongRange;->getLast()J
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v6
 

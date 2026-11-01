@@ -457,6 +457,40 @@
     return-void
 .end method
 
+.method public final updateSalePrice(Landroid/content/Context;JDDD)V
+    .locals 12
+
+    const-string v0, "context"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    new-instance v0, Lcom/example/accounting/ui/selling/home/SellingHomeViewModel$updateSalePrice$1;
+
+    move-object v1, p1
+
+    move-wide/from16 v2, p2
+
+    move-wide/from16 v4, p4
+
+    move-wide/from16 v6, p6
+
+    move-wide/from16 v8, p8
+
+    move-object/from16 v10, p0
+
+    invoke-direct/range {v0 .. v10}, Lcom/example/accounting/ui/selling/home/SellingHomeViewModel$updateSalePrice$1;-><init>(Landroid/content/Context;JDDDLcom/example/accounting/ui/selling/home/SellingHomeViewModel;)V
+
+    new-instance v1, Ljava/lang/Thread;
+
+    move-object v2, v0
+
+    invoke-direct {v1, v2}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+
+    invoke-virtual {v1}, Ljava/lang/Thread;->start()V
+
+    return-void
+.end method
+
 .method public static synthetic savePurchase$default(Lcom/example/accounting/ui/selling/home/SellingHomeViewModel;Ljava/lang/String;Ljava/lang/String;DJLjava/lang/String;Ljava/lang/String;ZILjava/lang/Object;)V
     .locals 12
 

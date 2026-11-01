@@ -38,7 +38,7 @@
 .end method
 
 .method public final invoke()V
-    .locals 5
+    .locals 6
 
     new-instance v0, Landroid/widget/EditText;
 
@@ -62,47 +62,79 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/EditText;->setInputType(I)V
 
-    new-instance v1, Landroid/app/AlertDialog$Builder;
+    new-instance v1, Landroid/widget/EditText;
 
     iget-object v2, p0, Lcom/example/accounting/ui/selling/SellingDialogsKt$ProductDetailDialog$3$CostClick$1;->$context:Landroid/content/Context;
 
-    invoke-direct {v1, v2}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v2}, Landroid/widget/EditText;-><init>(Landroid/content/Context;)V
 
-    const-string v2, "\u4fee\u6539\u8fdb\u4ef7"
+    const-string v2, "\u51fa\u552e\u4ef7(\u4e0d\u6539\u53ef\u7559\u7a7a)"
 
-    invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v1, v2}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
 
-    move-result-object v1
+    const/16 v2, 0x2002
 
-    invoke-virtual {v1, v0}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v1, v2}, Landroid/widget/EditText;->setInputType(I)V
 
-    move-result-object v1
+    new-instance v2, Landroid/widget/LinearLayout;
+
+    iget-object v3, p0, Lcom/example/accounting/ui/selling/SellingDialogsKt$ProductDetailDialog$3$CostClick$1;->$context:Landroid/content/Context;
+
+    invoke-direct {v2, v3}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->setOrientation(I)V
+
+    const/16 v4, 0x20
+
+    invoke-virtual {v2, v4, v4, v4, v4}, Landroid/widget/LinearLayout;->setPadding(IIII)V
+
+    invoke-virtual {v2, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    invoke-virtual {v2, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    new-instance v4, Landroid/app/AlertDialog$Builder;
+
+    iget-object v5, p0, Lcom/example/accounting/ui/selling/SellingDialogsKt$ProductDetailDialog$3$CostClick$1;->$context:Landroid/content/Context;
+
+    invoke-direct {v4, v5}, Landroid/app/AlertDialog$Builder;-><init>(Landroid/content/Context;)V
+
+    const-string v5, "\u4fee\u6539\u8fdb\u4ef7 / \u51fa\u552e\u4ef7"
+
+    invoke-virtual {v4, v5}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v4
+
+    invoke-virtual {v4, v2}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v4
 
     new-instance v2, Lcom/example/accounting/ui/selling/SellingDialogsKt$ProductDetailDialog$3$CostClick$1$Save;
 
-    iget-object v3, p0, Lcom/example/accounting/ui/selling/SellingDialogsKt$ProductDetailDialog$3$CostClick$1;->$product:Lcom/example/accounting/data/entity/Product;
+    iget-object v5, p0, Lcom/example/accounting/ui/selling/SellingDialogsKt$ProductDetailDialog$3$CostClick$1;->$product:Lcom/example/accounting/data/entity/Product;
 
-    invoke-direct {v2, v0, v3}, Lcom/example/accounting/ui/selling/SellingDialogsKt$ProductDetailDialog$3$CostClick$1$Save;-><init>(Landroid/widget/EditText;Lcom/example/accounting/data/entity/Product;)V
+    invoke-direct {v2, v0, v1, v5}, Lcom/example/accounting/ui/selling/SellingDialogsKt$ProductDetailDialog$3$CostClick$1$Save;-><init>(Landroid/widget/EditText;Landroid/widget/EditText;Lcom/example/accounting/data/entity/Product;)V
 
-    const-string v3, "\u4fdd\u5b58"
+    const-string v0, "\u4fdd\u5b58"
 
-    invoke-virtual {v1, v3, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v4, v0, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    move-result-object v1
+    move-result-object v0
 
-    const-string v2, "\u53d6\u6d88"
+    const-string v1, "\u53d6\u6d88"
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    invoke-virtual {v1, v2, v3}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->create()Landroid/app/AlertDialog;
 
-    move-result-object v1
+    move-result-object v0
 
-    invoke-virtual {v1}, Landroid/app/AlertDialog;->show()V
+    invoke-virtual {v0}, Landroid/app/AlertDialog;->show()V
 
     return-void
 .end method
