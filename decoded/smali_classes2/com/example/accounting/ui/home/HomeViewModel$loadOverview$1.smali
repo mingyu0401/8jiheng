@@ -217,9 +217,7 @@
 
     const-wide/16 v4, 0x0
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v6
+    const-wide v6, 0x7fffffffffffffffL
 
     invoke-virtual {v2, v4, v5, v6, v7}, Lcom/example/accounting/data/repository/SellingRepository;->observeTotalProfit(JJ)Lkotlinx/coroutines/flow/Flow;
 

@@ -375,9 +375,7 @@
 
     const-wide/16 v2, 0x0
 
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v4
+    const-wide v4, 0x7fffffffffffffffL
 
     invoke-direct {v1, v2, v3, v4, v5}, Lkotlin/ranges/LongRange;-><init>(JJ)V
 
